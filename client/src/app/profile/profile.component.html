@@ -1,0 +1,99 @@
+<div class="top" style='background-image: url("./../../assets/Gymkhana.jpeg");
+'>
+
+</div>
+<div class="picture">
+</div>
+
+<h3 style="text-align: center;color:white;position: relative;top:-5vh;">{{user.first_name}} </h3>
+
+
+<mat-divider class="line1"></mat-divider>
+
+
+
+
+
+
+
+
+
+
+<!-- <h4 style="color: white; position: relative; top: -4vh; text-align:center;  ">Events
+  to look out! </h4>
+
+ <mat-grid-list cols="5" style="margin-left: 15%" rowHeight="100px" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let event of Events" [colspan]="4" [rowspan]="3" style="width: 50%;"
+    [routerLink]="['/event',event._id]">
+    <mat-grid-tile-header style="justify-content:center;color: azure;">
+      <h2>{{event.title}}</h2>
+    </mat-grid-tile-header>
+
+    <img src="./../../assets/{{event.images}}" style="object-fit:fill ;">
+    <mat-grid-tile-footer height="200px" style="justify-content:center;">{{event.venue}}
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>   -->
+
+<mat-divider></mat-divider>
+<form class="example-form" [formGroup]="queryForm" (ngSubmit)="onSubmit()" style="text-align:center">
+
+
+  <div>
+    <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+      <input matInput placeholder="Subject" type="text" id="subject" formControlName="subject" required #querySubject>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+      <input matInput placeholder="Detail" type="text" id="detail" formControlName="detail" required #queryDetail>
+    </mat-form-field>
+
+
+  </div>
+  <mat-label>Sport</mat-label>
+  <select class="form-control" id="sport" formControlName="sport" style="width:80%;margin-left:10%">
+
+    <!-- <option value="default">--Select a Sport--</option> -->
+    <option *ngFor="let s of sports;" [ngValue]="s">{{s}}</option>
+  </select>
+  <br>
+
+  <button mat-raised-button type="submit" style="width: 50%;background-color: blueviolet;" class="form-group">Submit</button>
+
+</form>
+<div>
+  <h5 style="text-align: center;margin-top:5%">My Queries</h5>
+  <!-- <div *ngFor="let query of  Queries"> -->
+
+  <mat-accordion style="width: 70%;" class="field">
+    <mat-expansion-panel hideToggle *ngFor="let query of Queries;" style="width: 80%;margin-left:10%;">
+      <!-- <div *ngIf="query.author === user.roll_number"> -->
+        <mat-expansion-panel-header *ngIf="query.author === user.roll_number">
+          <mat-panel-title>{{query.subject}}
+            <div *ngIf="query.status === 1">
+              <span class="badge rounded-pill bg-success">Success</span>
+            </div>
+            <div *ngIf="query.status === 0">
+              <span class="badge rounded-pill bg-warning">Pending</span>
+              <!-- <span class="badge text-bg-warning">Pending</span> -->
+            </div>
+          </mat-panel-title>
+          <div style="text-align: right;">
+            <mat-panel-description style="font-weight: 900;">
+              {{query.sport}} </mat-panel-description>
+          </div>
+        </mat-expansion-panel-header>
+        <h5><b>Details:</b></h5>
+        <p>{{query.detail}}</p>
+        <h5><b>Feedback:</b></h5>
+        <p>{{query.feedback}}</p>
+      <!-- </div> -->
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+<!-- </div> -->
+<!-- </div> -->
+
+<div style="text-align:center; padding: 5%;">
+  <button mat-raised-button color="accent" id="toggle_button2" (click)="logout()">Logout</button>
+</div>

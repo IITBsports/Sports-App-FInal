@@ -1,0 +1,15 @@
+.picture{
+      padding-top: 20%;
+      background-image: url("../../assets/avatar1.png");
+      position: relative;
+      width: 10vh;
+      height: 10vh;
+      top: -5vh;
+      margin: auto;
+      border-radius: 5vh;
+      border-bottom: 3px solid white;
+      z-index: 1;
+      background-size: cover;
+    
+    }
+    

@@ -1,0 +1,36 @@
+<mat-accordion style="width: 70%;">
+    <mat-expansion-panel hideToggle
+      style="width: 60%;margin-left: 20%;background-color: rgb(116, 121, 187);color: white;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: white;">queries Subject
+        </mat-panel-title>
+        <div style="text-align: right;">
+          <mat-panel-description style="font-weight: 900;color: white;">
+            Sport </mat-panel-description>
+        </div>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion style="width: 70%;" class="field">
+    <mat-expansion-panel hideToggle *ngFor="let queries of Queries; let i = index" style="width: 60%;margin-left: 20%;">
+
+      <mat-expansion-panel-header>
+        <mat-panel-title >{{queries.subject}}
+        </mat-panel-title>
+        <div style="text-align: right;">
+          <mat-panel-description style="font-weight: 900;">
+            {{queries.sport}} </mat-panel-description>
+        </div>
+      </mat-expansion-panel-header>
+      <p>{{queries.detail}}</p>
+      <p>Status : {{queries.status}}</p>
+       <button mat-raised-button class="btn btn-sm btn-primary"
+        routerLink="/admin/edit-queries/{{queries._id}}" style="background-color: rgb(99, 105, 185);color:white">Edit</button>
+      <button mat-raised-button class="btn btn-sm btn-danger" (click)="delete(queries._id)"
+         style="background-color: rgb(99, 105, 185);color:white">Delete</button>
+      <button mat-raised-button class="btn btn-sm btn-danger" (click)="BanUser(queries.author)"
+         style="background-color: rgb(99, 105, 185);color:white">Ban User</button>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>

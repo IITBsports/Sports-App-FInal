@@ -1,0 +1,44 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(#e2e9f3, #fefefe, #c5d4e8, #d2dcea, #e2e9f3);
+  background-size: cover;
+  position: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: black;
+    opacity: 0.7;
+} */
+
+.mat-tab-link-container {
+  display: block;
+  margin-top: 10%;
+  /* min-width: 100%; */
+}
+
+.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+  display: none;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

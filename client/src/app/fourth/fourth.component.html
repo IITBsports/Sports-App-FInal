@@ -1,0 +1,51 @@
+<div class="search-box mat-elevation-z2" style="background-color:  rgb(32, 3, 39);align-items: center;">
+  <button mat-button mat-icon-button (click)="OnSearch()" matTooltip="Buscar">
+    <mat-icon style="color: rgb(129, 15, 123);">search</mat-icon>
+  </button>
+
+  <mat-form-field class="form-field" [floatLabel]="'never'" style="width: 76%;color: powderblue;">
+    <input style="color:rgb(221, 180, 219)" matInput type="text" placeholder="Search" [(ngModel)]="value"
+      (keyup.enter)="OnSearch()" />
+  </mat-form-field>
+
+  <button style="color: rgb(129, 15, 123);" mat-button mat-icon-button (click)="OnClear()" matTooltip="Borrar búsqueda">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <mat-grid-list cols="3" rowHeight="120px" class="product-item" style="margin-left:5px;margin-right:5px;">
+    <mat-grid-tile class="product-item" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+      [style.background]="tile.color" style="border-radius:10px;">
+      <img src='{{tile.color}}' class="tile-image"
+        style="width: 100/3px;height:100/2px;border-width:100px;border-color: rgb(221, 180, 219);height: 90%;width: 100px;margin-top: 0px;">
+
+    </mat-grid-tile>
+
+
+    <mat-grid-tile class="product-item" [colspan]="1" [rowspan]="2" [style.background]="'../../assets/aavhanrun.jpg'"
+      style="border-radius:10px;">
+      <div><img src='../../assets/aavhanrun.jpg' class="tile-image"
+          style="border-color: rgb(221, 180, 219);height: 100%;width: 150px;margin-top: 0px;"></div>
+      <br>
+      <hr>
+      <mat-grid-tile-header></mat-grid-tile-header>
+      <mat-grid-tile-footer> <a style="color: white;">Blog-Title</a></mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile class="product-item" [colspan]="1" [rowspan]="2" [style.background]="'../../assets/aavhanrun.jpg'"
+      style="border-radius:10px;">
+      <img src='../../assets/aavhanrun.jpg' class="tile-image"
+        style="width: 100/3px;height:100/2px;border-width:100px;border-color: rgb(221, 180, 219);height: 90%;width: 100px;margin-top: 0px;">
+
+    </mat-grid-tile>
+    <mat-grid-tile class="product-item" [colspan]="1" [rowspan]="2" [style.background]="'../../assets/aavhanrun.jpeg'"
+      style="border-radius:10px;">
+      <img src='../../assets/aavhanrun.jpg' class="tile-image"
+        style="width: 100/3px;height:100/5px;border-width:100px;border-color: rgb(211, 178, 209);height: 90%;width: 100px;margin-top: 0px;">
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+  <mat-grid-tile routerLink="event" [colspan]=2 [rowspan]=1 [style.background]="'lightblue'">
+
+    <mat-grid-tile-footer style="font-family: cursive;color: rgb(255, 255, 255);background-color:black;">
+      Event</mat-grid-tile-footer>
+
+  </mat-grid-tile>

@@ -1,0 +1,91 @@
+<br>
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel style="margin-left: auto; margin-right: auto;" [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput required [formControl]="nameFormControl">
+        <mat-error *ngIf="nameFormControl.hasError('minlength')">
+          Name must be at least 3 characters long.
+        </mat-error>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field style="margin-left:0">
+        <mat-label>Roll Number</mat-label>
+        <input matInput required [formControl]="rollNumberFormControl">
+        <mat-error *ngIf="rollNumberFormControl.hasError('required')">
+          Roll Number is required
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel style="margin-left: auto; margin-right: auto;" [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Category
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <input matInput [formControl]="typeFormControl">
+      </mat-form-field>
+  
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel style="margin-left: auto; margin-right: auto;" [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput [formControl]="descriptionFormControl">
+        <mat-error *ngIf="descriptionFormControl.hasError('required')">
+          Description is required
+        </mat-error>
+        <!-- <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly> -->
+      </mat-form-field>
+      <!-- <mat-datepicker #picker></mat-datepicker> -->
+  
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="onSubmit()">Submit</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  
+  </mat-accordion>
+
+  <h2 style="color: white; text-align: center;">Institute Sports Council 2020-21</h2>
+
+  <mat-card class="example-card" style="text-align: center; width: 80%; background-color: whitesmoke; margin-left: auto; margin-right: auto;">
+    <mat-card-header style="text-align: center;">
+      <mat-card-title style="color: darkorange; margin-left: auto; margin-right: auto;">General Secretary</mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+    </mat-card-header>
+    <img mat-card-image src="../../assets/gsec.png" style="border-radius: 50%; width: 40%;" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <h3 style="color: black; margin-bottom: 0;">Yogender Singh</h3>
+        <p style="color: grey; margin-bottom: 0;">9321299294</p>
+        <p style="color: grey; margin-bottom: 0;">gsecsport@iitb.ac.in</p>
+    </mat-card-content>
+  </mat-card>
+  <br>

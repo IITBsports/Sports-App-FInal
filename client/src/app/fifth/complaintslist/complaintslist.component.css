@@ -1,0 +1,18 @@
+.Heading {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+
+.field {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.field:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}

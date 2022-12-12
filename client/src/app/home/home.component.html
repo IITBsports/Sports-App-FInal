@@ -1,0 +1,75 @@
+<div style="height: 75%;">
+  <div id='table'>
+   
+
+    <div id='box'> 
+       <div class="container" dir="ltr">
+      
+        <!-- <h3 style="text-align: center;color:rgb(177, 0, 165);position: relative;top:-5vh;display:list-item;">      Latest Sports Happenings
+        </h3> -->
+      
+      <mat-card [routerLink]="['/event',events._id]" style="max-width: 300px;border-radius: 10px; margin: 10% 5%;" *ngFor="let events of sortByLastModifiedAsend"
+        class="event-card">
+        <mat-card-header>
+          <mat-card-title style="border-width:thick;border-color: black; margin-top:20%;">
+            <div> <img mat-card-image src="./../../assets/{{events.images}}" style="width: 100%;max-width: 200px;height: 50%;margin-top: -10%;">
+            </div>
+            <h6>{{events.title}}</h6>
+          </mat-card-title>
+        </mat-card-header>
+<mat-card-content>{{events.description}}</mat-card-content>
+      </mat-card>
+             
+
+      <!-- <mat-card [routerLink]="['/blog',blogs._id]"
+        style="max-width: 800px;max-height:350px;border-radius: 10px; margin-top: 10%;" *ngFor="let blogs of Blogs"
+        class="event-card">
+        <mat-card-header>
+          <mat-card-title style="border-width:thick;border-color: black;">
+            <div> <img mat-card-image src="./../../assets/{{blogs.image}}">
+            </div>
+            {{blogs.blogTitle}}
+          </mat-card-title>
+  
+        </mat-card-header>
+  
+      </mat-card>-->
+      <br>
+  
+    </div>  <h3 style="text-align: center;color:rgb(255, 255, 255);position: relative;top:-5vh;display:list-item;margin-bottom: 10%;margin-top: 10%;">      Latest Sports Happenings
+    </h3> </div>
+    <div id='box' >  
+      <div class="gcst" style="margin-top: 10%" style="padding-top: -10px">
+        <h3 div="heading" style="margin-bottom: 10%">Standings</h3>
+        <div class="table" >
+          <table>
+            <tr class="header">
+              <th *ngFor="let column of headers">
+                {{column}}
+              </th>
+            </tr>
+            <tr *ngFor="let h of Points; let i = index">
+              <td>
+                {{h.title}}
+              </td>
+              <td>{{h.first_place}} </td>
+              <td>{{h.second_place}} </td>
+              <td>{{h.third_place}} </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    
+  
+    <br>
+
+  </div>
+ 
+

@@ -1,0 +1,146 @@
+
+<!-- <div class="heading display-4 mt-5 mb-1">{{sport}}</div> -->
+<mat-menu #menu="matMenu" style="background-color: rgb(43, 35, 56); border-top: purple">
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      sports
+    </mat-icon><a class="nav-link" routerLink="detail" routerLinkActive="active-link"
+      style="margin-left: 13px;color: rgb(220, 125, 198);">{{sport}}</a><br>
+  </button>
+  <button mat-menu-item style="background:rgb(255,255,255); color: white;border-radius: 1px;">
+    <\!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      events
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../events" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Events</a><br />
+  </button>
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      book
+    </mat-icon><a class="nav-link" routerLink="rules" routerLinkActive="active-link"
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../rules" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Rules</a><br />
+  </button>
+
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      people
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../people" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">People</a><br />
+  </button>
+
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(220, 125, 198); position: absolute; top: 10px">
+      timer_10
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../matches" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Matches</a><br />
+  </button>
+</mat-menu>
+<div class="sport-name-div"><img src='../../assets/weightlifting_logo.png' style="float: left;margin-top: -28%;">
+  <div class="heading" style="float: inline-end;">
+    WEIGHTLIFTING
+  </div>
+</div>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" id="menu-icon">
+  <mat-icon style="font-size:52px;">more_vert</mat-icon>
+</button>
+<!-- <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li>
+</ul> -->
+<!-- <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" id="menu-icon"
+    (click)="drawer1.toggle()">
+    <mat-icon>more_vert</mat-icon>
+  </button> -->
+<!-- <span id="menu-icon" (click)="drawer1.toggle()" class="material-icons">menu</span> -->
+<!-- <mat-drawer-container>
+
+    <mat-drawer role="navigation" #drawer1 position='start' mode="over" style="background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+    background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+    background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);width: 100%;text-align: center;">
+      <a class="nav-link" routerLink="detail" routerLinkActive="active-link" (click)='drawer1.close()'>{{sport}}</a><br>
+      <a class="nav-link" routerLink="events" routerLinkActive="active-link" (click)='drawer1.close()'>Events</a><br>
+      <a class="nav-link" routerLink="rules" routerLinkActive="active-link" (click)='drawer1.close()'>Rules</a><br>
+      <a class="nav-link" routerLink="people" routerLinkActive="active-link" (click)='drawer1.close()'>People</a><br>
+      <a class="nav-link" routerLink="facilities" routerLinkActive="active-link"
+        (click)='drawer1.close()'>Facilities</a><br>
+      <a class="nav-link" routerLink="matches" routerLinkActive="active-link" (click)='drawer1.close()'>Matches</a><br>
+    </mat-drawer>
+
+    <mat-drawer-content> -->
+
+<!-- </mat-drawer-content>
+  </mat-drawer-container> -->
+<!-- </mat-card> -->
+<mat-card class="mat-drawer-container container" style="background: transparent; box-shadow: none; color: black;">
+  <!-- <div>
+      <ul class="customIndent">
+          <li>Hall Timings: <br>
+              4pm to 10 pm
+          </li>
+          <li>Who may use the Hall:
+              <ul class="customIndent">
+                  <li>IIT Bombay students, staff and faculties possessing a valid IIT Bombay identity card
+                  </li>
+                  <li>Guests must be accompanied by the host member
+                  </li>
+                  <li>Player must make entry in the logbook while entering and leaving the court
+                  </li>
+              </ul>
+          </li>
+          <li>Priority of play and Reservations:
+              <ul class="customIndent">
+                  <li>Tables are available on first come first serve basis
+                  </li>
+                  <li>Players may be asked to vacate the tables which are pre-reserved during the specefic hours
+                  </li>
+                  <li>Tables may be pre-reserved for Girls, Institute events and team practice. Information regarding the same will be put up on the notice board
+                  </li>
+                  <li>Tables are not open for reservations, special requests regarding the same may be put forward to the council
+                  </li>
+              </ul>
+          </li>
+          <li>General Rules:
+              <ul class="customIndent">
+                  <li>T-Shirt and shorts or track-pants are to be worn. Jeans are not allowed.
+                  </li>
+                  <li>Gum-soled shoes are mandatory for all the players using the facility
+                  </li>
+                  <li>Ensure that you put the table covers back on the table after you finish playing.
+                  </li>
+              </ul>
+          </li>
+          <li>Issue of Equipment
+              <ul class="customIndent">
+                  <li>Rackets and balls can be issued for personal usage from the desk outside the hall or the SAC Store Room
+                  </li>
+                  <li>The issued equipment should be used properly and returned after use without any physical damage
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </div> -->
+
+  <router-outlet></router-outlet>
+
+
+</mat-card>

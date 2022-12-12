@@ -1,0 +1,164 @@
+{"db_url":{
+    "db_url": "mongodb://localhost/appdb"    
+},
+
+"council":[
+    {
+        "name": "Sadaksh Chauhan",
+        "post": "Gen. Sec.",
+        "user-id": "",
+        "email": "gsecsport@iitb.ac.in",
+        "mobile": "9315331178"
+    },
+    {   
+        "name": "Vineet Bhat",
+        "post": "Events Nominee",
+        "user-id": "9769801936",
+        "email": "gsecsport@iitb.ac.in",
+        "mobile": ""
+
+    },
+    {   
+        "name": "Anirudh Maheshwari",
+        "post": "Admin Nominee",
+        "user-id": "",
+        "email": "gsecsport@iitb.ac.in",
+        "mobile": "8959303449"
+
+    },
+    {   
+        "name": "Parul Maheshwari",
+        "post": "Girls Nominee",
+        "user-id": "",
+        "email": "gsecsport@iitb.ac.in",
+        "mobile": "9509240643"
+
+    },
+    {   
+        "name": "Nitya Garg",
+        "post": "PG Nominee",
+        "user-id": "",
+        "email": "gsecsport@iitb.ac.in",
+        "mobile": "9882155133"
+
+    },
+    {   
+        "name": "Ananya Shankar Singh",
+        "post": "Aquatics Secy",
+        "user-id": "",
+        "email": "aquatics@iitb.ac.in",
+        "mobile": "8879474867"
+
+    },
+    {   
+        "name": "Manisha Kopuri",
+        "post": "Athletics Secy",
+        "user-id": "",
+        "email": "athletics@iitb.ac.in",
+        "mobile": "8500487326"
+
+    },
+    {   
+        "name": "Bhargavi Taralekar",
+        "post": "Badminton Secy",
+        "user-id": "",
+        "email": "badminton@iitb.ac.in",
+        "mobile": "9594908108"
+
+    },
+    {   
+        "name": "Aum Jain",
+        "post": "Basketball Secy",
+        "user-id": "",
+        "email": "basketball@iitb.ac.in",
+        "mobile": "8888206444"
+
+    },
+    {   
+        "name": "Atharva Tayade",
+        "post": "Board Games Secy",
+        "user-id": "",
+        "email": "boardgames@iitb.ac.in",
+        "mobile": "9967947552"
+
+    },
+    {   
+        "name": "Anish Bang",
+        "post": "Cricket Secy",
+        "user-id": "",
+        "email": "cricket@iitb.ac.in",
+        "mobile": "7447278787"
+
+    },
+    {   
+        "name": "Riyan Jain",
+        "post": "Football Secy",
+        "user-id": "",
+        "email": "football@iitb.ac.in",
+        "mobile": "8197325938"
+
+    },
+    {   
+        "name": "Ketan Agarwal",
+        "post": "Hockey Secy",
+        "user-id": "",
+        "email": "hockey@iitb.ac.in",
+        "mobile": "9644267882"
+
+    },
+    {   
+        "name": "Diksha Chandna",
+        "post": "Indian Games Secy",
+        "user-id": "",
+        "email": "indiangames@iitb.ac.in",
+        "mobile": "9328493602"
+
+    },
+    {   
+        "name": "Sahil Kumar",
+        "post": "Lawn Tennis Secy",
+        "user-id": "",
+        "email": "lawntennis@iitb.ac.in",
+        "mobile": "8281975214"
+
+    },
+    {   
+        "name": "Harshit Singh",
+        "post": "Squash Secy",
+        "user-id": "",
+        "email": "squash@iitb.ac.in",
+        "mobile": "8180012548"
+
+    },
+    {   
+        "name": "Satyajeet Machale",
+        "post": "Table Tennis Secy",
+        "user-id": "",
+        "email": "tabletennis@iitb.ac.in",
+        "mobile": "8668959078"
+
+    },
+    {   
+        "name": "Prem Kavathiya",
+        "post": "Volleyball Secy",
+        "user-id": "",
+        "email": "volleyball@iitb.ac.in",
+        "mobile": "9925577977"
+
+    },
+    {   
+        "name": "Aniket Ambatkar",
+        "post": "Weightlifting Secy",
+        "user-id": "",
+        "email": "weightlifting@iitb.ac.in",
+        "mobile": "9588440559"
+
+    }
+
+]
+,
+ "email_details":{
+    "email": "",
+    "password": ""
+}
+}

@@ -1,0 +1,295 @@
+<!-- <mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'20px'">
+    <mat-grid-tile *ngFor="let match of RunningScores_arr" [colspan]="4" [rowspan]="3" style="width: 50%;"
+      [routerLink]="['/match',match._id]">
+      <mat-grid-tile-header style="justify-content:center;color: azure;">
+        <h2>{{match.match_title}}</h2>
+      </mat-grid-tile-header>
+
+      <img src="./../../assets/{{match.images}}" style="object-fit:fill ;">
+      <mat-grid-tile-footer height="200px" style="justify-content:center;">{{match.match_review
+      }}
+      </mat-grid-tile-footer>
+      {{match.desc}}
+    </mat-grid-tile>
+  </mat-grid-list> -->
+  <div *ngFor="let res of RunningScores_arr; let i = index" >
+    <!-- <mat-card class="scorescard" *ngIf="res.type==='Gc'" (click)="toggleview(i)"> -->
+    <mat-card class="scorescard">
+        <mat-card-title style="font-size: medium" panelOpenState="true;">
+          <h2>{{ res.match_title }} [{{res.type}}]</h2>
+        </mat-card-title>
+
+        <mat-card-content>
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+
+          <mat-progress-bar mode="indeterminate" style="width: 80%; margin: auto"></mat-progress-bar>
+          <mat-accordion style="width: 100%;">
+            <mat-expansion-panel hideToggle
+              style="width: 80%;margin-left: 10%;background-color: #d4abef; color: white;">
+              <mat-expansion-panel-header>
+                <mat-panel-title style="color: black;"> Team
+                </mat-panel-title>
+                <div style="text-align: right;">
+                  <mat-panel-description style="font-weight: 900;color: black;">
+                    Score </mat-panel-description>
+                </div>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <mat-accordion style="width: 100%;" class="field">
+            <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{res.Team_1}}
+                </mat-panel-title>
+                <div style="text-align: right;">
+                  <mat-panel-description style="font-weight: 900;">
+                    {{res.Team_1Score}} </mat-panel-description>
+                </div>
+              </mat-expansion-panel-header>
+
+              <b>{{res.Team_1Name}}</b>
+
+
+
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion style="width: 100%;" class="field">
+            <!-- <mat-expansion-panel hideToggle *ngFor="let book of Books; let i = index" style="width: 60%;margin-left: 20%;"> -->
+            <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{res.Team_2}}
+                </mat-panel-title>
+                <div style="text-align: right;">
+                  <mat-panel-description style="font-weight: 900;">
+                    {{res.Team_2Score}} </mat-panel-description>
+                </div>
+              </mat-expansion-panel-header>
+
+              <b>{{res.Team_2Name}}</b>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion style="width: 100%;" class="field">
+            <!-- <mat-expansion-panel hideToggle *ngFor="let book of Books; let i = index" style="width: 60%;margin-left: 20%;"> -->
+            <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{res.Team_3}}
+                </mat-panel-title>
+                <div style="text-align: right;">
+                  <mat-panel-description style="font-weight: 900;">
+                    {{res.Team_3Score}} </mat-panel-description>
+                </div>
+              </mat-expansion-panel-header>
+
+              <b>{{res.Team_3Name}}</b>
+
+
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion style="width: 100%;" class="field">
+            <!-- <mat-expansion-panel hideToggle *ngFor="let book of Books; let i = index" style="width: 60%;margin-left: 20%;"> -->
+            <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{res.Team_4}}
+                </mat-panel-title>
+                <div style="text-align: right;">
+                  <mat-panel-description style="font-weight: 900;">
+                    {{res.Team_4Score}} </mat-panel-description>
+                </div>
+              </mat-expansion-panel-header>
+
+              <b>{{res.Team_4Name}}</b>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+          <!-- <table style="margin-left:25%;">
+          <tr>
+            <th>Team</th>
+            <th style="text-align: right;">Score</th>
+          </tr>
+          <tr>
+            <td>
+              <p>{{ res.Team_1 }}</p>
+                  </td>
+                  <td>
+                    <p style="text-align: right;">{{res.Team_1Score}}</p>
+                  </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>{{ res.Team_2 }}</p>
+                    </td>
+                    <td>
+                      <p style="text-align: right;">{{res.Team_2Score}}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>{{ res.Team_3 }}</p>
+                    </td>
+                    <td>
+                      <p style="text-align: right;">{{res.Team_3Score}}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>{{ res.Team_4 }}</p>
+                    </td>
+                    <td>
+                      <p style="text-align: right;">{{res.Team_4Score}}</p>
+                    </td>
+                  </tr>
+                  </table> -->
+        </mat-card-content>
+        <!-- <a href="/admin/scores/{{res._id}}" routerLink="/admin/scores/{{res._id}}">
+        <img _ngcontent-byl-c56="" src="../../assets/Vector.png" alt="" class="isvg">
+      </a> -->
+        <!-- <div class="buttons">
+          <button routerLink="/admin/scores/{{res._id}}">Edit </button>
+          <button (click)="deleteAvsB(res._id)">Delete</button>
+        </div> -->
+        <mat-expansion-panel
+          style="width: 100%; margin-top: 0.5%">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="align-items:center; text-align: center;"> Match Overview </mat-panel-title>
+            <!-- <mat-panel-description> Won by H-11 </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <p>{{res.match_review}}</p>
+        </mat-expansion-panel>
+    </mat-card>
+  </div>
+
+  <div *ngFor="let res of AvsBScores_arr; let i = index" >
+    <mat-card class="scorescard">
+      <mat-card-title style="font-size: medium;" panelOpenState="true;">
+        <h2>{{ res.match_title }} [{{res.type}}]</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <mat-progress-bar mode="indeterminate" style="width: 80%; margin: auto"></mat-progress-bar>
+        <div class="scoreboard">
+          <div class="scoreboard_name">
+            {{res.Team_A}}
+          </div>
+          <div class="scoreboard_name">
+            {{res.Team_B}}
+          </div>
+          <div class="scoreboard_score" style="color: blue;">
+            {{res.Team_AScore}}
+          </div>
+          <div class="scoreboard_score">
+            {{res.Team_BScore}}
+          </div>
+          <div class="scoreboard_pname">
+            {{res.Team_AName}}
+          </div>
+          <div class="scoreboard_pname">
+            {{res.Team_BName}}
+          </div>
+        </div>
+        <!-- <div class="buttons">
+          <button routerLink="/admin/scores/{{res._id}}">Edit </button>
+          <button (click)="deleteAvsB(res._id)">Delete</button>
+        </div> -->
+        <mat-expansion-panel
+          style="width: 100%; margin-top: 0.5%">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="align-items:center; text-align: center;"> Match Overview </mat-panel-title>
+            <!-- <mat-panel-description> Won by H-11 </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <p>{{res.match_review}}</p>
+        </mat-expansion-panel>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngFor="let res of CricketScores_arr; let i = index" >
+    <mat-card class="scorescard">
+      <mat-card-title style="font-size: medium" panelOpenState="true;">
+        <h2>{{ res.match_title}} [{{res.type}}]</h2>
+      </mat-card-title>
+      <mat-card-content>
+
+        <mat-progress-bar mode="indeterminate" style="width: 80%; margin: auto"></mat-progress-bar>
+
+        <!-- <mat-accordion style="width: 100%;" class="field">
+          <mat-expansion-panel hideToggle style="width: 100%;" >
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{res.Team_a}}
+              </mat-panel-title>
+              <div style="text-align: right;">
+                <mat-panel-description style="font-weight: 900;">
+                  {{res.Team_aRuns}} / {{res.Team_awickets}}</mat-panel-description>
+              </div>
+            </mat-expansion-panel-header>
+
+            <b>Team Members</b>
+            <li>Member one</li>
+            <b><i>Details</i></b>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laboriosam nihil, quis
+              necessitatibus quaerat soluta nostrum magnam repellendus debitis ea accusantium aperiam? Aspernatur
+              minima provident tempora, fuga sint ut unde voluptas necessitatibus autem velit.
+            </p>
+
+
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion style="width: 100%;" class="field">
+          <mat-expansion-panel hideToggle style="width: 100%;" >
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{res.Team_b}}
+              </mat-panel-title>
+              <div style="text-align: right;">
+                <mat-panel-description style="font-weight: 900;">
+                  {{res.Team_bRuns}} / {{res.Team_bwickets}}</mat-panel-description>
+              </div>
+            </mat-expansion-panel-header>
+
+            <b>Team Members</b>
+            <li>Member one</li>
+            <b><i>Details</i></b>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laboriosam nihil, quis
+              necessitatibus quaerat soluta nostrum magnam repellendus debitis ea accusantium aperiam? Aspernatur
+              minima provident tempora, fuga sint ut unde voluptas necessitatibus autem velit.
+            </p>
+
+
+          </mat-expansion-panel>
+        </mat-accordion> -->
+        <div class="scoreboard01">
+          <div class="team_name" style="font-weight: bold;">
+            {{res.Team_a}}
+          </div>
+          <div class="team_score" style="font-weight: bold;">
+            {{res.Team_aRuns}} / {{res.Team_awickets}}
+          </div>
+          <div class="team_name">
+            {{res.Team_b}}
+          </div>
+          <div class="team_score">
+            {{res.Team_bRuns}} / {{res.Team_bwickets}}
+          </div>
+          <div class="msg" style="margin-top: 10px;">
+            <!-- {{res.Team_a}} won by {{res.Team_aRuns - res.Team_bRuns}} runs. -->
+            {{res.Team_a}} won by {{10 - res.Team_awickets}} wickets.
+          </div>
+        </div>
+
+
+        <mat-expansion-panel
+          style="width: 100%; margin-top: 0.5%">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="align-items:center; text-align: center;"> Match Overview </mat-panel-title>
+            <!-- <mat-panel-description> Won by H-11 </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <p>{{res.match_review}}</p>
+        </mat-expansion-panel>
+
+
+      </mat-card-content>
+    </mat-card>
+  </div>

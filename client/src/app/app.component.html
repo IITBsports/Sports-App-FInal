@@ -1,0 +1,110 @@
+<!-- <mat-toolbar style="background-color: black; text-align: center; color: white;">
+    <h3 style="font-weight: 900;">IIT Bombay Sports</h3>
+</mat-toolbar> -->
+
+<div id="top-bar" class="row pt-2">
+  <!-- <div class="col-1"></div> -->
+  <mat-toolbar style=" background-color: #51046B; color: white;">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm
+        style="height:40px;margin-top:-10px">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill style="height: 80vh;width:100%;  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);">
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <!-- <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a> -->
+        <a routerLink="explore" (click)="sidenav.toggle()" mat-list-item>Sports</a>
+        <a routerLink="gc" (click)="sidenav.toggle()" mat-list-item>GC</a>
+        <a routerLink="inter-iit" (click)="sidenav.toggle()" mat-list-item>Inter-IIT</a>
+
+        <a routerLink="gcstandings" (click)="sidenav.toggle()" mat-list-item>GC Tally</a>
+        <a routerLink="interiitstandings" (click)="sidenav.toggle()" mat-list-item>Inter-IIT Tally</a>
+        <a routerLink="contact-us" (click)="sidenav.toggle()" mat-list-item>Contact Us</a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet style="margin-left: -100px;"></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <!-- <div class="col-4"></div> -->
+  <div id="login" class="top-right" *ngIf="!user">
+    <a [href]="loginHref"><img src="../assets/sso icon.png"
+        style="width: 200px;height:200px;margin-top:-75px;margin-bottom: -75px;margin-right:-75px;"></a>
+  </div>
+  <div id="login" class="top-right" *ngIf="user">
+    <span>
+      <mat-icon routerLink="profile"><img src="../assets/profile.gif"
+          style="width:150%;height:150%;margin-top:4%;border-radius: 100px;margin-left: -10px;">
+      </mat-icon>
+      <!-- <mat-icon (click)="logout()" style="width:100%;height:100%;margin-top:4%;">logout</mat-icon> -->
+    </span>
+  </div>
+</div>
+
+
+
+
+<!-- <div style="height: 80vh;">
+  <mat-toolbar  style=" background-color: #51046B; color: white;">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill style="height: 80vh;">
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+        <a href="#" mat-list-item>Menu Item 1</a>
+        <a href="#" mat-list-item>Menu Item 2</a>
+        <a href="#" mat-list-item>Menu Item 3</a>
+        <a href="#" mat-list-item>Menu Item 4</a>
+        <a href="#" mat-list-item>Menu Item 5</a>
+        <a href="#" mat-list-item>Menu Item 6</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet style="margin-left: -100px;"></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>
+<footer style=" background-color: #51046B; color: white;">
+  <nav mat-tab-nav-bar style=" width: 100%;">
+    <a mat-tab-link (click)="activeLink = 'AB'" routerLink="explore" [active]="activeLink == 'AB'"><img
+        src="../assets/navigate.png" alt="image"></a>
+    <a mat-tab-link (click)="activeLink = 'CD'" routerLink="/" [active]="activeLink == 'CD'"
+      style="margin-left:20%;"><img src="../assets/iitbsports.png" alt="image"></a>
+    <a mat-tab-link (click)="activeLink = 'IJ'" routerLink="contact-us" [active]="activeLink == 'IJ'"
+      style="margin-left:20%;"><img src="../assets/contacticon.png" alt="image"></a>
+  </nav>
+</footer> -->
+
+
+
+<div class="container">
+  <div class="content">
+    <!-- <p style="color: white;">{{user_string}}</p> -->
+    <!-- <router-outlet style="margin-left: -100px;"></router-outlet> -->
+  </div>
+
+  <footer>
+    <nav mat-tab-nav-bar style=" width: 100%;height: 90%;margin-top: 10%;">
+      <a mat-tab-link (click)="activeLink = 'AB'" routerLink="explore" [active]="activeLink == 'AB'" ><img
+          src="../assets/explore.png" alt="image"></a>
+      <a mat-tab-link (click)="activeLink = 'CD'" routerLink="/" [active]="activeLink == 'CD'"
+        style="margin-left:20%;"><img src="../assets/iitbsports.png" alt="image" style=" height: 100%;"></a>
+      <a mat-tab-link (click)="activeLink = 'IJ'" routerLink="contact-us" [active]="activeLink == 'IJ'"
+        style="margin-left:20%;"><img src="../assets/contactus.png" alt="image" style="filter: brightness(0) invert(1);"></a>
+    </nav>
+  </footer>
+  <!-- <button (click) = 'sendhello()'>send hello</button> -->
+</div>

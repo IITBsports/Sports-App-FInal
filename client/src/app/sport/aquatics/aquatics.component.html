@@ -1,0 +1,167 @@
+<!-- <div class="heading display-4 mt-5 mb-1">{{sport}}</div> -->
+<mat-menu #menu="matMenu" style="background-color: rgb(43, 35, 56); border-top: purple">
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      sports
+    </mat-icon><a class="nav-link" routerLink="detail" routerLinkActive="active-link"
+      style="margin-left: 13px;color: rgb(220, 125, 198);">{{sport}}</a><br>
+  </button>
+  <button mat-menu-item style="background:rgb(255,255,255); color: white;border-radius: 1px;">
+    !-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      events
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../events" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Events</a><br />
+  </button>
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      book
+    </mat-icon><a class="nav-link" routerLink="rules" routerLinkActive="active-link"
+    </mat-icon> -->
+    <a class="nav-link" routerLink="rules" routerLinkActive="sport/athletics/rules"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Rules</a><br />
+  </button>
+
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      people
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../people" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">People</a><br />
+  </button>
+
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(220, 125, 198); position: absolute; top: 10px">
+      timer_10
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../matches" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Matches</a><br />
+  </button>
+</mat-menu>
+<div class="sport-name-div" style="margin-top: 10%">
+  <img src="{{ image }}" style="float: left; margin-top: -10%" />
+  <div class="heading" style="float: inline-end">
+    {{ sport | uppercase }}
+  </div>
+</div>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" id="menu-icon">
+  <mat-icon style="font-size: 52px">more_vert</mat-icon>
+</button>
+  <!-- <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul> -->
+  <!-- <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" id="menu-icon"
+      (click)="drawer1.toggle()">
+      <mat-icon>more_vert</mat-icon>
+    </button> -->
+  <!-- <span id="menu-icon" (click)="drawer1.toggle()" class="material-icons">menu</span> -->
+  <!-- <mat-drawer-container>
+
+      <mat-drawer role="navigation" #drawer1 position='start' mode="over" style="background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+      background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+      background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);width: 100%;text-align: center;">
+        <a class="nav-link" routerLink="detail" routerLinkActive="active-link" (click)='drawer1.close()'>{{sport}}</a><br>
+        <a class="nav-link" routerLink="events" routerLinkActive="active-link" (click)='drawer1.close()'>Events</a><br>
+        <a class="nav-link" routerLink="rules" routerLinkActive="active-link" (click)='drawer1.close()'>Rules</a><br>
+        <a class="nav-link" routerLink="people" routerLinkActive="active-link" (click)='drawer1.close()'>People</a><br>
+        <a class="nav-link" routerLink="facilities" routerLinkActive="active-link"
+          (click)='drawer1.close()'>Facilities</a><br>
+        <a class="nav-link" routerLink="matches" routerLinkActive="active-link" (click)='drawer1.close()'>Matches</a><br>
+      </mat-drawer>
+
+      <mat-drawer-content> -->
+
+  <!-- </mat-drawer-content>
+    </mat-drawer-container> -->
+  <!-- </mat-card> -->
+  <mat-card class="mat-drawer-container container" style="background: transparent;
+  box-shadow: none;">
+    <div>
+        <ol class="customIndent">
+            <li>Students Gymkhana/ Coach have the right to use any of the slot for the students camp, inter hostel, Inter IIT Camp of any other program that has been approved by Chairman (Sports)/ Dean (SA)
+            </li>
+            <li>The pool slots are strictly implemented during the summer months, other period if the number of swimmers in the big pool is less than 30 they may be permitted to swim without encroaching ladies slots
+            </li>
+        </ol>
+        <ul class="customIndent">
+            <li><b>General Rules</b>
+            <ul class="customIndent">
+                <li>Swimming is prohibited without membership card.
+                </li>
+                <li>The membership card is not transferable .If this rule is violated, membership will stand cancelled.
+                </li>
+                <li>Guest charges are Rs 20/- per dip.
+                </li>
+                <li>Only the primary member of the swimming pool is allowed to bring the guest .No depended /school children are eligible to bring the guset.
+                </li>
+                <li>Guest will be allowed only once/twice in a week.
+                </li>
+                <li>Primary member has to fill the guest form each time available at the pool office and entry should be made in guest entry book as well as main entry book at the counter.
+                </li>
+                <li>It is compulsory that the guest should be accompanied by the primary member.
+                </li>
+                <li>During ladies slot no male member is permitted to swim, however female members are allowed to use the pool during general slots.
+                </li>
+                <li>Swimming costume is must for all using the swimming pool .The costume should be non- transparent and non-white in colour.
+                </li>
+                <li>Women or men having long hair must wear a swimming cap.
+                </li>
+                <li>Any person having open cuts , wounds and eye infection or any other communicable disease are not allowed to enter the pool.
+                </li>
+                <li>Anyone under the influence of drugs liquor or other intoxiscates are not allowed to enter the premises of the swimming pool.
+                </li>
+                <li>The member should leave their possessions and foot wear in the cloak room.
+                </li>
+                <li>Members must take bath before entering the swimming pool. If necessary they are advised to use soap to remove any oil from hair .
+                </li>
+                <li>Swimming is strictly prohibited in the absence of a life guard .
+                </li>
+                <li>Beginners should remain at the shallow end of the pool and always wear a red cap. Beginners below 12 years should be accompanied by their parents.
+                </li>
+                <li>Never push any one into the pool as horse play is not permitted in the pool and never swim beyond your capacity.
+                </li>
+                <li>Photography in the pool premises is not allowed unless prior permission is obtained.
+                </li>
+            </ul>
+            </li>
+            <li><b>Making the Membership Card</b>
+                <ul class="customIndent">
+                    <li>You can take a pink form from swimming pool counter or office in the evening from 5:00 PM to 8:00 PM.
+                    </li>
+                    <li>You would need a passport size photograph to stick on the form and one more to stick on your swimming card.
+                    </li>
+                    <li>After filling up the form you should get the General Physician’s signature and stamp from IIT Hospital. You would be checked for sensitivity to chlorine, skin problems, infection in ears etc.
+                    </li>
+                    <li>You should submit the form to Swimming Pool office, along with a passport size photograph
+                    </li>
+                    <li>Please wait for a day or two for processing of your form. You can collect you card from swimming pool office after two days from submitting the form.
+                    </li>
+                    <li>Extra info: Swimming Pool office is to your right after you enter the swimming pool.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>For more info <a href="https://gymkhana.iitb.ac.in/~sports/assets/view/Aquatics/rules.pdf">click here</a></p>
+    </div>
+
+    <router-outlet></router-outlet>
+
+
+  </mat-card>
