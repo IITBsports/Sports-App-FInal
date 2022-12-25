@@ -24,7 +24,8 @@
         <a routerLink="gcstandings" (click)="sidenav.toggle()" mat-list-item>GC Tally</a>
         <a routerLink="interiitstandings" (click)="sidenav.toggle()" mat-list-item>Inter-IIT Tally</a>
         <a routerLink="contact-us" (click)="sidenav.toggle()" mat-list-item>Contact Us</a>
-
+        <div *ngIf="user">
+          <a routerLink="admin"  *ngIf="user.is_admin" (click)="sidenav.toggle()" mat-list-item>Admin</a></div>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
@@ -100,7 +101,7 @@
     <nav mat-tab-nav-bar style=" width: 100%;height: 90%;margin-top: 10%;">
       <a mat-tab-link (click)="activeLink = 'AB'" routerLink="explore" [active]="activeLink == 'AB'" ><img
           src="../assets/explore.png" alt="image"></a>
-      <a mat-tab-link (click)="activeLink = 'CD'" routerLink="/" [active]="activeLink == 'CD'"
+      <a mat-tab-link (click)="activeLink = 'CD'" routerLink="/home" [active]="activeLink == 'CD'"
         style="margin-left:20%;"><img src="../assets/iitbsports.png" alt="image" style=" height: 100%;"></a>
       <a mat-tab-link (click)="activeLink = 'IJ'" routerLink="contact-us" [active]="activeLink == 'IJ'"
         style="margin-left:20%;"><img src="../assets/contactus.png" alt="image" style="filter: brightness(0) invert(1);"></a>

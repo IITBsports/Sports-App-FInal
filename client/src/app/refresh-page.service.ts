@@ -9,7 +9,7 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { E } from '@angular/cdk/keycodes';
 import { identifierName } from '@angular/compiler';
-import {QueryData} from './../../../server/models/Query.js'
+import {QueryData} from './models/Query.js'
 
 @Injectable({
   providedIn: 'root',

@@ -62,8 +62,7 @@ export class ProfileComponent implements OnInit {
       author:['']
     });
   }
-  loginHref =
-    'https://gymkhana.iitb.ac.in/profiles/oauth/authorize/?client_id=13leStzGZlsbAqkY7mby3AFIueoR3HtbAIdfAZ54&response_type=code&scope=basic profile program ldap insti_address sex&redirect_uri=http://localhost:8080/api/login';
+  loginHref = "https://gymkhana.iitb.ac.in/profiles/oauth/authorize/?client_id=H5BclqBYk0P9kOjJXGCXi73uMGrUntQfU4gZMfMk&response_type=code&scope=basic profile program ldap insti_address sex&redirect_uri=http://localhost:8080/api/login";
   ngOnInit() {
     this.adminService.getAllQueries().subscribe(res => {
 
@@ -97,7 +96,7 @@ export class ProfileComponent implements OnInit {
             console.log(this.user);
             if (data != undefined && data != null)
               localStorage.setItem('user-data', JSON.stringify(this.user));
-            Response.redirect('https://localhost:4200');
+            Response.redirect('https://10.198.49.8/sportsapp');
           });
         (error) => {
           console.log('failied login:', error);

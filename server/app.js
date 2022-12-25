@@ -6,7 +6,7 @@ const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const cors = require("cors");
-const url = 'mongodb://localhost/Sports-App';
+const url = 'mongodb://10.198.49.53/sports';
 const User = require('./models/user');
 const Post = require('./models/post');
 const RunningEventScore = require("./models/RunningEventScore");
@@ -28,6 +28,7 @@ app.use(cors({ origin: "*" }));
 var bodyParser = require('body-parser');
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
+
 
 app.use(express.json());
 app.use(fileUpload());

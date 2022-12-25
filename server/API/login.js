@@ -3,14 +3,15 @@ const USER = require('../models/user');
 
 
 async function login(req, response, User, Session) {
-	home_url = "localhost:4200"
+	console.log("Hi1")
+ 
 	if (req.query.code == undefined) {
 		response.redirect(home_url);
 		return;
 	}
 	var AUTH_CODE = req.query.code;
-	var request_query = 'code=' + AUTH_CODE + '&redirect_uri=http://localhost:8080/api/login' + '&grant_type=authorization_code';
-
+	var request_query = 'code=' + AUTH_CODE + '&redirect_uri=http://10.198.49.8:8080/api/login' + '&grant_type=authorization_code';
+	console.log("Hi1")
 	// Create an API call to get access and refresh tokens
 	const options = {
 		hostname: 'gymkhana.iitb.ac.in',
@@ -18,7 +19,7 @@ async function login(req, response, User, Session) {
 		method: 'POST',
 		headers: {
 
-			'Authorization': "Basic MTNsZVN0ekdabHNiQXFrWTdtYnkzQUZJdWVvUjNIdGJBSWRmQVo1NDpYOXZqTzZYV0F3bG1YUWN1T0NWYzNVY0hiaVRpYWdNYm9tN2VSQXoxdlJqWXY2a1NkcE8wRjdPZUpkamFpUnFhNm9UVElmRWZVZVNYVlNHOEVuTnhMR0dCTWhSMWdUMkdGcVdjNE5qSkEycmQ1bXdjdGpWN255MjB1T1F1RzJaWQ==",
+			'Authorization': "Basic SDVCY2xxQllrMFA5a09qSlhHQ1hpNzN1TUdyVW50UWZVNGdaTWZNazpiNk52ZlBkUkJZQldQb1hvZXduY2JaZjVSVXlRNnNvUE9uZWdOTGZ6elhOVllaN1RkUWxrRGUyU1ZoSEx6TFZBWkRJTzFacnVjZ2R3YXdCcGhlclg5bFZwckdwWU1aVTg0aGpsUGFDcnoxU3dtbGUxZXRFRmZJWlNnRWd0aDdWRg==",
 			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
 		}
 	};
@@ -27,7 +28,7 @@ async function login(req, response, User, Session) {
 		res.on('data', (chunk) => {
 			data += chunk;
 		});
-
+		console.log("aaa")
 		res.on('end', () => {
 			var responseResult;
 			try {
@@ -36,7 +37,7 @@ async function login(req, response, User, Session) {
 			catch (err) {
 				return response.redirect(home_url);
 			}
-
+			console.log(responseResult)
 			if (responseResult.access_token != undefined) {
 
 				// Create an API call to fetch student data
@@ -48,6 +49,7 @@ async function login(req, response, User, Session) {
 						'Authorization': 'Bearer ' + responseResult.access_token,
 					}
 				};
+				console.log(options2)
 
 				const getRequest = https.request(options2, (res) => {
 					let data = '';
@@ -62,12 +64,12 @@ async function login(req, response, User, Session) {
 							console.log(getResult.image)
 						}
 						catch (err) {
-							return response.redirect("http://localhost:4200");
+							return response.redirect("http://10.198.49.8/sportsapp/home");
 						}
 						// we have got the user data in getResult here.
 						// Check if user database exists in our database
 						User.countDocuments({ roll_number: getResult.roll_number }, (err, count) => {
-							if (err) console.log(err);
+							if (err) console.log(err,"aaaa");
 							if (count == 0) {
 								let user = new User({
 									roll_number: getResult.roll_number,
@@ -100,30 +102,30 @@ async function login(req, response, User, Session) {
 							session.save();
 
 						})
-						// return response.redirect("http://localhost:4200");
+						// return response.redirect("http://10.198.49.8/sportsapp/home");
 					});
 
 				}).on("error", (err) => {
 					console.log("Error: ", err.message);
-					return response.redirect("http://localhost:4200");
+					return response.redirect("http://10.198.49.8/sportsapp/home");
 
 				});
 
 				getRequest.end();
 			}
 			else {
-				return response.redirect("http://localhost:4200");
+				return response.redirect("http://10.198.49.8/sportsapp/home");
 			}
 		});
 
 	}).on("error", (err) => {
 		console.log("Error: ", err.message);
-		return response.redirect("http://localhost:4200");
+		return response.redirect("http://10.198.49.8/sportsapp/home");
 	});
 
 	request.write(request_query);
 	request.end();
-	return response.redirect("http://localhost:4200");
+	return response.redirect("http://10.198.49.8/sportsapp/home");
 
 }
 

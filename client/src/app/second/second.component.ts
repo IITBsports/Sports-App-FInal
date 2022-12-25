@@ -117,8 +117,12 @@ export class SecondComponent implements OnInit {
     this.router.navigate(['gc', params]);
   }
   get sortByLastModifiedAsend() {
+    if (this.Blogs !== undefined) {
     return this.Blogs.sort((a: any, b: any) => {
       return <any>new Date(b.date_created) - <any>new Date(a.date_created);
-    });
+    });}
+    else{
+      return 0;
+    }
   }
 }

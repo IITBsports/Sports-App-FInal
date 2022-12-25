@@ -114,9 +114,11 @@ import { IneriitstandingsComponent } from './inter-iit/ineriitstandings/ineriits
 import { AdminQueryComponent } from './admin/admin-query/admin-query.component';
 import { EditQueryComponent } from './admin/edit-query/edit-query.component';
 import { WeightliftingComponent } from './sport/weightlifting/weightlifting.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
     HomeComponent,
     FirstComponent,
@@ -176,6 +178,7 @@ import { WeightliftingComponent } from './sport/weightlifting/weightlifting.comp
     AdminQueryComponent,
     EditQueryComponent,
     WeightliftingComponent,
+    LoginComponent,
   ],
   imports: [
     NgxMaterialTimepickerModule,
@@ -188,6 +191,7 @@ import { WeightliftingComponent } from './sport/weightlifting/weightlifting.comp
     CookieModule.forRoot(),
     NgMultiSelectDropDownModule.forRoot(),
     RouterModule.forRoot([
+      { path: 'login', component: LoginComponent },
       { path: 'contact', component: FirstComponent },
       { path: 'linktree', component: LinktreeComponent },
       { path: 'edituser', component: EditUserComponent },
@@ -211,7 +215,8 @@ import { WeightliftingComponent } from './sport/weightlifting/weightlifting.comp
       { path: 'event/:id', component: EventComponent },
       { path: 'news', component: NewsComponent },
       { path: 'news/:id2', component: NewsDetailsComponent },
-      { path: '', component: HomeComponent },
+      { path: '', component: LoginComponent },
+
       { path: 'home', component: HomeComponent },
 
       { path: 'avail', component: FourthComponent },
