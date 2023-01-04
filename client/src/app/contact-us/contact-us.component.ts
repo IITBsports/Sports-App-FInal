@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RefreshPageService } from '../refresh-page.service';
 
 export interface Contacts {
   name: String;
@@ -14,7 +15,7 @@ export interface Contacts {
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-
+  Contacts: any = [];
   contact: Contacts[] = [
     { name: "Ketan Agrawal", image: "../assets/people/Ketan_Agrawal_GSSA_Image.jpg", id: "ketan.agrawal811@gmail.com", no: "+91 9644267882", position: "General Secretary, Sports Affairs" },
     { name: "Prem Kavathiya", image: "../assets/people/prem.jpg", id: "premkavathiya77977@gmail.com", no: "+91 9925577977", position: "Institute Sports Nominee - Events and Clubs" },
@@ -43,9 +44,20 @@ export class ContactUsComponent implements OnInit {
   ]
 
 
-  constructor() { }
+  constructor(
+    private refreshPageService: RefreshPageService,
+  ) { }
 
   ngOnInit(): void {
+
+    this.refreshPageService.getAllPeoples().subscribe(res => {
+      console.log(res)
+      this.Contacts =res;
+
+      // console.log(this.Events)
+      // console.log(this.Events.title);
+      // console.log(this.Events.tags);
+    });
   }
 
 }

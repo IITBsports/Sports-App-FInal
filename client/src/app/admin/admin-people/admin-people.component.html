@@ -1,0 +1,68 @@
+<form class="example-form" [formGroup]="addPeopleForm" (ngSubmit)="onSubmit()">
+
+
+  <!-- Upload image  -->
+  <div class="form-group">
+    <div class="avatar-edit"><img (click)="fileInput.click()" [src]="imageUrl || '../assets/img_preview.jpeg'"
+        style="height: 100%;width: 100%;">
+      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" #fileInput (change)="uploadFile($event)" required
+        style="height: 0px;width:0px;" />
+    </div>
+    <div id="imagePreview" [style.backgroundImage]="'url('+ imageUrl +')'" style="height: 100%;width: 100%;">
+    </div>
+
+  </div>
+
+
+  <mat-card style="margin-bottom: 10px;">
+    <mat-card-content>
+
+        <div class="form-group">
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="Name" type="text" id="peopleName" formControlName="name" required
+              #peopleName>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="About" type="text" id="about" formControlName="about" required
+              #about>
+          </mat-form-field>
+        </div>
+
+        <select class="form-control" id="sport" formControlName="sport">
+          <option value="default">--Select a Sport--</option>
+          <option *ngFor="let s of sports;" [ngValue]="s">{{s}}</option>
+        </select>
+        <select class="form-control" id="position" formControlName="position">
+          <option value="default">--Select a Position--</option>
+          <option *ngFor="let p of positions;" [ngValue]="p">{{p}}</option>
+        </select>
+        <div class="form-group">
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="Phone Number" type="number" id="phone_no" formControlName="phone_no" #PhoneNo>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="fb_url" type="text" id="fb_url" formControlName="fb_url" #fb_url>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="insta_url" type="text" id="insta_url" formControlName="insta_url" #insta_url>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput value="none" placeholder="Gmail Id" type="gmail" id="gmail" formControlName="gmail" #Gmail>
+          </mat-form-field>
+
+        </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <button type="submit" style="background-color: blue;width: 100%;" class="form-group">Submit</button>
+
+
+  <div class="Buttons" style="margin-top: 5%;"><a href="admin" style="color: rgb(253, 253, 253);">
+      <button RouterLink="admin" type="cancel" style="background-color: rgba(168, 162, 162, 0.219);width: 100%;"
+        class="btn btn-default">Go
+        Back</button></a></div>
+</form>

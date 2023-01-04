@@ -49,6 +49,7 @@ const LOGINAPI = require("./API/login");
 const POSTAPI = require("./API/post");
 const EVENTAPI = require("./API/events");
 const BLOGAPI = require("./API/blog");
+const PEOPLEAPI = require("./API/people");
 const SCOREAPI = require("./API/gcScores");
 const MAILERAPI = require("./API/mailer");
 const SEARCHAPI = require("./API/search");
@@ -64,6 +65,7 @@ const Pts = require('./models/pts');
 const blog = require('./models/blog');
 const QueryData = require('./models/query');
 const banUser = require('./models/banUser');
+const People = require('./models/people');
 
 // const GCSCORES = require("./API/gcScores");
 
@@ -117,7 +119,7 @@ app.get('/api/getuserdata/:id', (req, res) => {
         LOGINAPI.getuserdata(req.params.id, res, User, Session);
     })
 })
-app.post('/edituserdata/:id', (req, res) => {
+app.post('/api/edituserdata/:id', (req, res) => {
     mongoose.connect(url, (err) => {
         console.log(req);
         console.log("aa gaya");
@@ -192,6 +194,15 @@ app.get('/api/geteventdetailed', (req, res) => {
     })
 })
 
+app.post('/api/addPeople', (req, res) => {
+    console.log("req")
+    mongoose.connect(url, function (err) {
+        console.log(req)
+
+        if (err) res.status(500).send(err);
+        PEOPLEAPI.addPeople(req, res);
+    })
+})
 app.post('/api/addBlog', (req, res) => {
     mongoose.connect(url, function (err) {
         console.log(req)
@@ -200,7 +211,7 @@ app.post('/api/addBlog', (req, res) => {
         BLOGAPI.addBlog(req, res);
     })
 })
-app.get('/getAllBlogs', function (req, res, next) {
+app.get('/api/getAllBlogs', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         blog.find((err, docs) => {
@@ -326,7 +337,21 @@ app.get('/api/post/admin/loginadmin', function (req, res) { res.json('Hello from
 app.listen(8080, () => console.log('backend running on port 8080'))
 //app.get('/getAllEvents', function (req, res) { res.json('Hello ') })
 
-app.get('/getAllEvents', function (req, res, next) {
+app.get('/api/getAllPeoples', function (req, res, next) {
+    mongoose.connect(url, function (err) {
+        if (err) return res.status(500).send(err);
+        People.find((err, docs) => {
+            if (!err) {
+                res.send(docs);
+            } else {
+                console.log('Failed to retrieve the Course List: ' + err);
+            }
+        });
+    })
+
+
+});
+app.get('/api/getAllEvents', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         Event.find((err, docs) => {
@@ -373,7 +398,7 @@ app.delete('/api/deleteEvent/:id', function (req, res, next) {
 
 })
 
-app.post('/addBanUser', (req, res) => {
+app.post('/api/addBanUser', (req, res) => {
     mongoose.connect(url, function (err) {
         if (err) res.status(500).send(err);
         banUser.create(req.body, (error, data) => {
@@ -412,7 +437,7 @@ app.put('/api/editbanuser/:id', (req, res) => {
     })
 })
 
-app.post('/addQuery', (req, res) => {
+app.post('/api/addQuery', (req, res) => {
     mongoose.connect(url, function (err) {
         if (err) res.status(500).send(err);
         QueryData.create(req.body, (error, data) => {
@@ -472,7 +497,7 @@ app.post('/api/addRunningEventScore', (req, res) => {
     })
 })
 
-app.get('/getRunningEventScores', function (req, res, next) {
+app.get('/api/getRunningEventScores', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         RunningEventScore.find((err, docs) => {
@@ -486,7 +511,7 @@ app.get('/getRunningEventScores', function (req, res, next) {
 
 
 });
-app.get('api/GetRunningEventScores/:id', function (req, res, next) {
+app.get('/api/GetRunningEventScores/:id', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         RunningEventScore.findById(req.params.id, (error, data) => {
@@ -553,7 +578,7 @@ app.post('/api/addAvsBScore', (req, res) => {
 
 
 
-app.get('/getAvsBScores', function (req, res, next) {
+app.get('/api/getAvsBScores', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         AvsBScore.find((err, docs) => {
@@ -568,7 +593,7 @@ app.get('/getAvsBScores', function (req, res, next) {
 
 });
 
-app.get('api/GetAvsBScores/:id', function (req, res, next) {
+app.get('/api/GetAvsBScores/:id', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         AvsBScore.findById(req.params.id, (error, data) => {
@@ -628,7 +653,7 @@ app.post('/api/addCricketScore', (req, res) => {
     })
 })
 
-app.get('/getCricketScores', function (req, res, next) {
+app.get('/api/getCricketScores', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         CricketScore.find((err, docs) => {
@@ -643,7 +668,7 @@ app.get('/getCricketScores', function (req, res, next) {
 
 });
 
-app.get('api/GetCricketScores/:id', function (req, res, next) {
+app.get('/api/GetCricketScores/:id', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         CricketScore.findById(req.params.id, (error, data) => {
@@ -812,7 +837,7 @@ app.post('/api/addPoints', (req, res) => {
     })
 })
 
-app.get('/getPoints', function (req, res, next) {
+app.get('/api/getPoints', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         Points.find((err, docs) => {
@@ -826,7 +851,7 @@ app.get('/getPoints', function (req, res, next) {
 
 
 });
-app.get('/getPts', function (req, res, next) {
+app.get('/api/getPts', function (req, res, next) {
     mongoose.connect(url, function (err) {
         if (err) return res.status(500).send(err);
         Pts.find((err, docs) => {

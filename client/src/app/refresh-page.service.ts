@@ -31,7 +31,15 @@ export class RefreshPageService {
   }
   getExplorePage() {}
   getAllEvents() {
-    let API_URL = this.REST_API + '/getAllEvents';
+    let API_URL = this.REST_API + '/api/getAllEvents';
+    return this.httpClient.get<any>(API_URL).pipe(
+      map((res: Response) => {
+        return res || {};
+      })
+    );
+  }
+  getAllPeoples() {
+    let API_URL = this.REST_API + '/api/getAllPeoples';
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -40,7 +48,7 @@ export class RefreshPageService {
   }
 
   getAllBlogs() {
-    let API_URL = this.REST_API + '/getAllBlogs';
+    let API_URL = this.REST_API + '/api/getAllBlogs';
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -49,7 +57,7 @@ export class RefreshPageService {
   }
 
   getRunningEventScores() {
-    let API_URL = this.REST_API + '/getRunningEventScores';
+    let API_URL = this.REST_API + '/api/getRunningEventScores';
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -57,7 +65,7 @@ export class RefreshPageService {
     );
   }
   GetRunningEventScores(id: String): Observable<any> {
-    let API_URL = this.REST_API + 'api/GetRunningEventScores/' +id;
+    let API_URL = this.REST_API + '/api/GetRunningEventScores/' +id;
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -74,7 +82,7 @@ export class RefreshPageService {
   }
 
   getAvsBScores() {
-    let API_URL = `http://localhost:8080/getAvsBScores`;
+    let API_URL = this.REST_API + '/api/getAvsBScores';
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -82,7 +90,7 @@ export class RefreshPageService {
       );
     }
     GetAvsBScores(id: String): Observable<any> {
-      let API_URL = this.REST_API + 'api/GetAvsBScores/' +id;
+      let API_URL = this.REST_API + '/api/GetAvsBScores/' +id;
       return this.httpClient.get<any>(API_URL).pipe(
         map((res: Response) => {
           return res || {};
@@ -100,7 +108,8 @@ export class RefreshPageService {
     }
 
   getCricketScores() {
-    let API_URL = `http://localhost:8080/getCricketScores`;
+    let API_URL = this.REST_API + '/api/getCricketScores';
+
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -108,7 +117,7 @@ export class RefreshPageService {
     );
   }
   GetCricketScores(id: String): Observable<any> {
-    let API_URL = this.REST_API + 'api/GetCricketScores/' +id;
+    let API_URL = this.REST_API + '/api/GetCricketScores/' +id;
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -125,7 +134,7 @@ export class RefreshPageService {
   }
 
   getPoints() {
-    let API_URL = `http://localhost:8080/getPoints`;
+    let API_URL = this.REST_API + '/api/getPoints';
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -133,7 +142,7 @@ export class RefreshPageService {
     );
   }
   getPts() {
-    let API_URL = `http://localhost:8080/getPts`;
+    let API_URL = this.REST_API + '/api/getPts';
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -141,7 +150,7 @@ export class RefreshPageService {
     );
   }
   getInteriitPts() {
-    let API_URL = `http://localhost:8080/getInteriitPts`;
+    let API_URL = this.REST_API + '/api/getInteriitPts';
     return this.httpClient.get<any>(API_URL).pipe(
       map((res: Response) => {
         return res || {};
@@ -161,7 +170,7 @@ export class RefreshPageService {
   // }
 
   updateUser(id: String, data: any) {
-    let API_URL = `${this.REST_API}/edituserdata/${id}`;
+    let API_URL = `${this.REST_API}/api/edituserdata/${id}`;
     console.log(API_URL);
 
     return this.http
@@ -345,7 +354,7 @@ export class RefreshPageService {
   addFollowedEvent(user_id:String,event_id:String){
     var params = new HttpParams();
     console.log("refreshpage me pahuncha");
-    let API_URL = `${this.REST_API}/addfollowedevent`;
+    let API_URL = `${this.REST_API}/api/addfollowedevent`;
     // params.set('event_id', event_id);
     // params.set('user_id', user_id);
    console.log( {user_id,event_id},API_URL);
@@ -363,7 +372,7 @@ export class RefreshPageService {
 
 
   addQuery(data:QueryData): Observable<any> {
-    let API_URL = `${this.REST_API}/addQuery`;
+    let API_URL = `${this.REST_API}/api/addQuery`;
     return this.http.post(API_URL, data).pipe(
       map((res: Response) => {
         return res || {};

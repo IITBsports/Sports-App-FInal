@@ -10,6 +10,7 @@ import { request } from 'http';
 import { Observable, throwError } from 'rxjs';
 import { Event } from './../../../../server/models/events.js';
 import { Blog } from './../../../../server/models/blog.js';
+import { People } from './../../../../server/models/people.js';
 import { RunningEventScore } from '../../../../server/models/RunningEventScore.js';
 import { AvsBScore } from '../../../../server/models/AvsBScore.js';
 import { CricketScore } from '../../../../server/models/CricketScore.js';
@@ -93,6 +94,17 @@ export class AdminService {
   addBlog( data: Blog ) {
     console.log('Blog adding');
     let API_URL = `${this.REST_API}/addBlog`;
+    return this.http.post(API_URL, data).pipe(
+      map((res: Response) => {
+        console.log('Hi12');
+
+        return res || {};
+      })
+    );
+  }
+  addPeople( data: People) {
+    console.log(' People adding');
+    let API_URL = `${this.REST_API}/addPeople`;
     return this.http.post(API_URL, data).pipe(
       map((res: Response) => {
         console.log('Hi12');
@@ -486,7 +498,7 @@ export class AdminService {
   }
 
   addBanUser(data:banuser): Observable<any> {
-    let API_URL = `${this.REST_API_without_api}/addBanUser`;
+    let API_URL = `${this.REST_API}/addBanUser`;
     return this.http.post(API_URL, data).pipe(
       map((res: Response) => {
         return res || {};

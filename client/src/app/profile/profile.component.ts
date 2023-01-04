@@ -32,6 +32,7 @@ export class ProfileComponent implements OnInit {
     'Badminton',
     'Basketball',
     'Cricket',
+    'Chess',
     'Table-Tennis',
     'Lawn-Tennis',
     'Squash',
@@ -78,6 +79,14 @@ export class ProfileComponent implements OnInit {
       console.log(this.Events)
       console.log(this.Events.title);
       console.log(this.Events.tags);
+    });
+    this.refreshPageService.getAllPeoples().subscribe(res => {
+      console.log(res)
+      // this.Events =res;
+
+      // console.log(this.Events)
+      // console.log(this.Events.title);
+      // console.log(this.Events.tags);
     });
     this.user = JSON.parse(localStorage.getItem('user-data'));
     this.user_string = localStorage.getItem('user-data');

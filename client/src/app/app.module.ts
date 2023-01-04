@@ -115,6 +115,7 @@ import { AdminQueryComponent } from './admin/admin-query/admin-query.component';
 import { EditQueryComponent } from './admin/edit-query/edit-query.component';
 import { WeightliftingComponent } from './sport/weightlifting/weightlifting.component';
 import { LoginComponent } from './login/login.component';
+import { AdminPeopleComponent } from './admin/admin-people/admin-people.component';
 
 @NgModule({
   declarations: [
@@ -179,6 +180,7 @@ import { LoginComponent } from './login/login.component';
     EditQueryComponent,
     WeightliftingComponent,
     LoginComponent,
+    AdminPeopleComponent,
   ],
   imports: [
     NgxMaterialTimepickerModule,
@@ -295,6 +297,7 @@ import { LoginComponent } from './login/login.component';
           { path: 'certificates', component: AdminCertificatesComponent },
           { path: 'points', component: PointsComponent},
           { path: 'pts', component: PtsComponent},
+          { path: 'people', component: AdminPeopleComponent},
           { path: 'interiitpts', component: PtsInteriitComponent},
           { path: 'queries', component: AdminQueryComponent},
           { path: 'edit-queries/:id', component:EditQueryComponent},
