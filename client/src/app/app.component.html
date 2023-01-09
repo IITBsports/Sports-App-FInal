@@ -2,7 +2,7 @@
     <h3 style="font-weight: 900;">IIT Bombay Sports</h3>
 </mat-toolbar> -->
 
-<div id="top-bar" class="row pt-2">
+<div id="top-bar" class="row pt-2" *ngIf="user!==null">
   <!-- <div class="col-1"></div> -->
   <mat-toolbar style=" background-color: #51046B; color: white;">
     <mat-toolbar-row>
@@ -49,7 +49,10 @@
 </div>
 
 
+<div *ngIf="user===null">
+  <router-outlet></router-outlet>
 
+</div>
 
 <!-- <div style="height: 80vh;">
   <mat-toolbar  style=" background-color: #51046B; color: white;">
@@ -97,7 +100,7 @@
     <!-- <router-outlet style="margin-left: -100px;"></router-outlet> -->
   </div>
 
-  <footer>
+  <footer *ngIf="user!==null">
     <nav mat-tab-nav-bar style=" width: 100%;height: 90%;margin-top: 10%;">
       <a mat-tab-link (click)="activeLink = 'AB'" routerLink="explore" [active]="activeLink == 'AB'" ><img
           src="../assets/explore.png" alt="image"></a>
