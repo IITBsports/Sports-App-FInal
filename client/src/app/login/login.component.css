@@ -1,0 +1,514 @@
+
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 1500px;
+}
+
+body {
+    background: linear-gradient(#e2e9f3, #fefefe, #c5d4e8, #d2dcea, #e2e9f3);
+    color: white;
+  width: 110%;
+  max-width: 1500px;
+  margin-top: -20%;
+  height: 150%;
+}
+
+section {
+  margin: 5rem 2rem;
+}
+
+/* Navigation Styles */
+
+
+
+.logo {
+  font-size: 1.25rem;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: left;
+  background: black;
+  width: 100%;
+  height: 100vh;
+  margin-top: 1rem;
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+/* Section One */
+
+.section-one {
+}
+
+.header {
+  font-size: 4rem;
+}
+
+.section-one-paragraph {
+  margin: 2rem 0;
+  width: 70%;
+  max-width: 500px;
+  line-height: 1.5rem;
+}
+
+
+.learn-more-btn {
+  background: rgb(254, 220, 254);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: .8rem;
+  text-decoration:solid;
+  color: rgb(0, 0, 0);
+}
+
+.learn-more-btn:hover {
+  background: #6c83ff;
+  color: white;
+}
+
+/* Section Two */
+
+/* Section Three */
+
+.section-three h3 {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 700px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Section Four */
+
+.flex-group {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.section-four p {
+  margin-bottom: 2rem;
+}
+
+.section-four-btn {
+  margin-bottom: rem;
+}
+
+/* Section Five */
+
+.section-five-flex-group {
+  flex-direction: row-reverse;
+}
+
+.section-five p {
+  margin-bottom: 2rem;
+}
+
+/* Section Six */
+
+.section-six p {
+  margin-bottom: 2rem;
+}
+
+/* Flex Group Mobile */
+
+@media (max-width: 800px) {
+  .flex-group {
+    flex-direction: column;
+  }
+}
+
+/* Section Seven */
+
+.section-seven h3 {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 700px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-seven-btn {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  width: 7.5rem;
+}
+
+/* Section Eight */
+
+.section-eight h4 {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+
+.section-eight p {
+  line-height: 1.5rem;
+}
+
+  
+
+
+.flex-group-eight {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 800px) {
+  .flex-group-eight {
+    flex-direction: column;
+  }
+}
+
+/* Section Nine */
+
+.section-nine {
+  margin-top: 15rem;
+}
+
+.logo-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-nine svg {
+  fill: white;
+  height: 50px;
+  cursor: pointer;
+  transition: ease-in-out 250ms;
+}
+
+.section-nine svg:hover {
+  transform: translateY(-10px);
+  fill: #db2aff;
+}
+
+
+/* Section Ten */
+
+.section-ten h3 {
+  margin: 15rem auto 2rem;
+  width: 80%;
+  max-width: 700px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-ten-btn {
+  text-align: center;
+  display: flex;  
+  justify-content: center;
+  margin: 0 auto;
+  width: 7.5rem;
+}
+
+
+
+
+
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover {
+  opacity: 0.8;
+}
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg.material-icons {
+  height: 24px;
+  width: auto;
+}
+
+svg.material-icons:not(:last-child) {
+  margin-right: 8px;
+}
+
+.card svg.material-icons path {
+  fill: #888;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.card {
+  border-radius: 40px;
+  border: 3px solid #eee;
+  background-image: linear-gradient(to bottom right, rgb(193, 82, 177), rgb(255, 255, 255));
+  height: 40px;
+  width: 150px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+.card-container .card:not(:last-child) {
+  margin-right: 0;
+}
+
+.card.card-small {
+  height: 16px;
+  width: 168px;
+}
+
+.card-container .card:not(.highlight-card) {
+  cursor: pointer;
+}
+
+.card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.card-container .card:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
+
+.card.highlight-card {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: auto;
+  min-width: 30%;
+  position: relative;
+}
+
+.card.card.highlight-card span {
+  margin-left: 60px;
+}
+
+
+a,
+a:visited,
+a:hover {
+  color: #00ffee;
+  font-size: x-large;
+
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+}
+
+.terminal {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 6px;
+  padding-top: 45px;
+  margin-top: 8px;
+  overflow: hidden;
+  background-color: rgb(15, 15, 16);
+}
+
+.terminal::before {
+  content: "\2022 \2022 \2022";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: rgb(58, 58, 58);
+  color: #c2c3c4;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 0;
+  padding: 14px 0;
+  text-indent: 4px;
+}
+
+.terminal pre {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  color: white;
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
+.circle-link {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin: 8px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 1s ease-out;
+}
+
+.circle-link:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+.github-star-badge {
+  color: #24292e;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 3px 10px;
+  border: 1px solid rgba(27, 31, 35, .2);
+  border-radius: 3px;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  margin-left: 4px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+.github-star-badge:hover {
+  background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+  border-color: rgba(27, 31, 35, .35);
+  background-position: -.5em;
+}
+
+.github-star-badge .material-icons {
+  height: 16px;
+  width: 16px;
+  margin-right: 4px;
+}
+
+svg#clouds {
+  position: fixed;
+  bottom: -160px;
+  left: -230px;
+  z-index: -10;
+  width: 1920px;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+
+  .card-container>*:not(.circle-link),
+  .terminal {
+    width: 100%;
+  }
+
+  .card:not(.highlight-card) {
+    height: 16px;
+    margin: 8px 0;
+  }
+
+  .card.highlight-card span {
+    margin-left: 72px;
+  }
+
+  svg#rocket-smoke {
+    right: 120px;
+    transform: rotate(-5deg);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  svg#rocket-smoke {
+    display: none;
+    visibility: hidden;
+  }
+}

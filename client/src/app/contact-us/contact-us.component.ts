@@ -15,6 +15,13 @@ export interface Contacts {
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
+  positions: string[] = [
+    'Cabinet',
+    'Secretary',
+    'Coach',
+    'Heads',
+    'Team',
+    ];
   Contacts: any = [];
   contact: Contacts[] = [
     { name: "Ketan Agrawal", image: "../assets/people/Ketan_Agrawal_GSSA_Image.jpg", id: "ketan.agrawal811@gmail.com", no: "+91 9644267882", position: "General Secretary, Sports Affairs" },
