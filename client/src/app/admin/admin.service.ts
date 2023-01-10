@@ -23,7 +23,7 @@ import {banuser} from './../models/banUser.js'
 })
 export class AdminService {
   // getAllEvents(){
-  //   let API_URL = `http://localhost:8080/getAllEvents`;
+  //   let API_URL = `http://10.198.49.8:8080/getAllEvents`;
   //   return this.httpClient.get<any>(API_URL).pipe(
   //     map((res: Response)=>{
   //       return res||{};
@@ -32,8 +32,8 @@ export class AdminService {
   // }
   postId;
 
-  REST_API: string = 'http://localhost:8080/api';
-  REST_API_without_api: string = 'http://localhost:8080';
+  REST_API: string = 'http://10.198.49.8:8080/api';
+  REST_API_without_api: string = 'http://10.198.49.8:8080';
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) {}
