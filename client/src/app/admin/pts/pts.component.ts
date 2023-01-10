@@ -56,10 +56,20 @@ export class PtsComponent implements OnInit {
       'IIT Madras',
       'IIT Kanpur',
       'IIT Delhi',
-      'IIT Kharagpur',
-      'IIT BHU',
-      'IIT Guwahati',
       'IIT Roorkee',
+      'IIT Kgp',
+      'IIT Guwahati',
+      'IIT Hyderabad',
+      'IIT Dhanbad',
+      'IIT Ropar',
+      'IIT Goa',
+      'IIT Jammu',
+      'IIT Patna',
+      'IIT BHU',
+      'IIT Jodhpur',
+      'IIT Bhuvaneshwar',
+      'IIT Mandi',
+      'IIT Dharwad'
     ];
   }
   onSubmit() {

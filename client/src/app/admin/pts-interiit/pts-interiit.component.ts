@@ -28,14 +28,24 @@ export class PtsInteriitComponent implements OnInit {
 
   ngOnInit(): void {
     this.dropdownList = [
-      'IIT-Bombay',
-      'IIT-Delhi',
-      'IIT-Kanpur',
-      'IIT-Kharagpur',
-      'IIT-Guwahati',
-      'IIT-Madras',
-      'IIT-Roorkee',
-      'IIT-BHU',
+      'IIT Bombay',
+      'IIT Madras',
+      'IIT Kanpur',
+      'IIT Delhi',
+      'IIT Roorkee',
+      'IIT Kgp',
+      'IIT Guwahati',
+      'IIT Hyderabad',
+      'IIT Dhanbad',
+      'IIT Ropar',
+      'IIT Goa',
+      'IIT Jammu',
+      'IIT Patna',
+      'IIT BHU',
+      'IIT Jodhpur',
+      'IIT Bhuvaneshwar',
+      'IIT Mandi',
+      'IIT Dharwad'
     ];
   }
   onSubmit() {
