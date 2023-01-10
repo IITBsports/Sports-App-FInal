@@ -28,10 +28,12 @@ export class FaqsComponent implements OnInit {
   ngOnInit(): void {
     this.adminService.getAllQueries().subscribe(res => {
       this.Queries =res;
+      let count =0;
       for (let i = 0; i < this.Queries.length; i++) {
         if (this.Queries[i].status == 2) {
 
-          this.Faqs[i] = this.Queries[i];
+          this.Faqs[count] = this.Queries[i];
+          count++;
         }
       }
       console.log(this.Faqs)
