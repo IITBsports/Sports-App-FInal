@@ -23,6 +23,7 @@
   </div>
   <select class="form-control" id="status" formControlName="status">
     <!-- <option value="default">--0/1--</option> -->
+    <label for="bool"> Choose 0(pending),1(Approved) or 2(FAQ)</label>
     <option *ngFor="let b of bool;" [ngValue]="b">{{b}}</option>
   </select>
 
