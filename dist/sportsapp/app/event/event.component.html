@@ -1,0 +1,140 @@
+<!-- <img src={{image}}>
+<H1>{{title}}</H1>
+<h6>{{author}}</h6>
+<h6>{{date}}</h6>
+<h4>{{description}}</h4>
+<mat-chip *ngFor = "let tag of tags">{{tag}}</mat-chip>
+people interested: {{interested_count}} -->
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+<div class="body">
+  <div class="titlebox">
+    <div class="title">
+      {{Events.title}}
+    </div>
+  </div>
+
+  <div class="poster">
+    <img class="img" src="./../../assets/{{Events.images}}">
+  </div>
+
+  <div class="about">
+
+    <div class="date">
+      <!-- <mat-icon>schedule</mat-icon> -->
+      <img src="../assets/image.png" style="width: 25px;height: 25px;margin-left: 5px;">
+      {{Events.date}}
+    </div>
+    <!--Events.content is not showning up-->
+    <div class="description">
+      {{Events.content}}
+    </div>
+
+
+    <!--!!!backend has to be done of this button!!!-->
+    <div class="this" *ngIf="Events.isPostEvent === 'Yes'; else elseBlock1">
+      <mat-accordion class="example-headers-align" hideToggle>
+        <mat-expansion-panel class="bg-panel">
+          <mat-expansion-panel-header >
+            <button class="finalstandings">
+              <p class="finalstandingtext">Final Standings</p>
+            </button>
+          </mat-expansion-panel-header>
+          <hr>
+          <mat-accordion style="width: 100%;" >
+            <b>{{Events.eventWinner_1}}</b>
+          </mat-accordion>
+          <hr>
+          <mat-accordion style="width: 100%;">
+            <b>{{Events.eventWinner_2}}</b>
+          </mat-accordion>
+          <hr>
+          <mat-accordion style="width: 100%;">
+            <b>{{Events.eventWinner_3}}</b>
+          </mat-accordion>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <ng-template #elseBlock1></ng-template>
+
+    <!-- <div *ngIf="Events.isPostEvent; else elseBlock">Text to show</div> -->
+    <!-- <div *ngIf="Events.isPostEvent; else elseBlock">{{Events.postEventDescription}}</div>
+    <ng-template #elseBlock>{{Events.description}}</ng-template> -->
+  </div>
+<!--
+</div> -->
+
+
+
+<!--POST EVENT DESCRIPTION-->
+<div class="content">
+
+  <div *ngIf="Events.isPostEvent === 'Yes'; else elseBlock">{{Events.postEventDescription}}</div>
+  <ng-template #elseBlock>{{Events.description}}</ng-template>
+
+  <!-- <div *ngIf="Events.isPostEvent; else elseBlock">Text to show</div> -->
+  <!-- <div *ngIf="Events.isPostEvent; else elseBlock">{{Events.postEventDescription}}</div>
+    <ng-template #elseBlock>{{Events.description}}</ng-template> -->
+</div>
+
+
+
+<!--INSTA AND FACEBOOK LINKS-->
+<div class="instafb">
+  <a href="https://{{Events.fb_url}}" target="_blank">
+    <img _ngcontent-byl-c56="" src="../assets/Vector (2).png" alt="" class="svg"></a>
+  <!-- <img _ngcontent-byl-c56="" src="../assets/facebook.svg" alt="">
+    <img _ngcontent-byl-c56="" src="../assets/facebook-24.svg" alt=""> -->
+  <a href="https://{{Events.insta_url}}" target="_blank">
+    <img _ngcontent-byl-c56="" src="../assets/Vector (3).png" alt="" class="svg"></a>
+
+  <!--!!!Events.url not defined!!!-->
+  <a href="https://{{Events.url}}" target="_blank">
+    <img _ngcontent-byl-c56="" src="../assets/Vector (Stroke).png" alt="" class="svg"></a>
+
+</div>
+
+
+
+<!--EDIT AND DELETE BUTTON-->
+
+<div class="adddelete" *ngIf="user.is_admin">
+  <!-- <div class="adddelete"> -->
+
+  <a href="/admin/event/{{Events._id}}" routerLink="/admin/event/{{Events._id}}">
+    <img _ngcontent-byl-c56="" src="../../assets/Vector.png" alt="" class="isvg">
+  </a>
+
+  <!-- <span style="color: rgb(255, 255, 255);">Edit</span> -->
+  <!--<button mat-mini-fab color="primary" style="background-color: rgb(99, 105, 185);color:white; margin-left: 10px;"
+      aria-label="Example icon button with a delete icon" (click)="delete(Events._id)">
+      <mat-icon>delete</mat-icon>
+    </button>-->
+
+  <a routerLink="/">
+    <img _ngcontent-byl-c56="" src="../../assets/Vector (1).png" alt="" class="isvg" (click)="delete(Events._id)">
+  </a>
+  <!-- <button onclick="follow()">Hello</button> -->
+  <!-- <button routerLink="/admin/event/{{Events._id}}">Edit </button> -->
+  <!-- <button (click)="delete(Events._id)">Delete</button> -->
+</div>
+
+
+<!--TAGS-->
+<div class="tags">
+  <div class="tagspiece">
+
+
+    <!-- <p class="singletag" *ngFor="let tag of Events.tags;index as i">{{Events.tags[i]}}
+      </p> -->
+    <!-- <mat-chip *ngFor = "let tag of tags">{{tag}}</mat-chip> -->
+    <mat-chip class="singletag" *ngFor="let tags of Events.tags;index as i"  [routerLink]="['/sport',Events.tags[i]]">{{Events.tags[i]}}</mat-chip>
+  </div>
+</div>
+
+
+<!-- <button (click)="Follow(Events._id)">FOLLOW THIS EVENT</button> -->
+
+</div>

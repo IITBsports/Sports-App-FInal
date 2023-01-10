@@ -1,0 +1,36 @@
+<form class="example-form" [formGroup]="editQueryForm" (ngSubmit)="onUpdate()">
+
+
+  <div>
+    <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+      <input matInput placeholder="Subject" type="text" id="subject" formControlName="subject" [readonly]="true" required
+        #querySubject>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+      <input matInput placeholder="Sport" type="text" id="sport" formControlName="sport" [readonly]="true" required
+        #querySport>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+      <input matInput placeholder="Detail" type="text" id="detail" formControlName="detail" [readonly]="true" required
+        #queryDetail>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+      <input matInput placeholder="Feedback" type="text" id="Feedback" formControlName="feedback" required
+        #queryFeedback>
+    </mat-form-field>
+
+
+  </div>
+  <select class="form-control" id="status" formControlName="status">
+    <!-- <option value="default">--0/1--</option> -->
+    <option *ngFor="let b of bool;" [ngValue]="b">{{b}}</option>
+  </select>
+
+  <!-- <select class="form-control" id="sport" formControlName="sport">
+    <option value="default">--Select a Sport--</option>
+    <option *ngFor="let s of sports;" [ngValue]="s">{{s}}</option>
+  </select> -->
+
+  <button type="submit" style="background-color: blue;width: 100%;" class="form-group">Submit</button>
+
+  </form>

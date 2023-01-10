@@ -1,0 +1,832 @@
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<mat-tab-group #tabGroup mat-align-tabs="center" [backgroundColor]="'primary'" [color]="'warn'"
+  [selectedIndex]="selected_tab" dynamicHeight="true" style="margin-top:10px;">
+  <mat-tab label="Scores" id="scores">
+    <ng-template matTabContent>
+      <div *ngFor="let res of RunningEventScore; let i = index" >
+      <mat-card class="scorescard" *ngIf="res.type==='Gc'" (click)="toggleview(i)">
+          <mat-card-title style="font-size: medium" panelOpenState="true;" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <h2>{{ res.sport }}</h2>
+          </mat-card-title>
+
+          <mat-card-content>
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+
+            <mat-progress-bar mode="indeterminate" style="width: 80%; margin: auto"></mat-progress-bar>
+            <mat-accordion style="width: 100%;">
+              <mat-expansion-panel hideToggle
+                style="width: 80%;margin-left: 10%;background-color: #d4abef; color: white;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title style="color: black;"> Team
+                  </mat-panel-title>
+                  <div style="text-align: right;">
+                    <mat-panel-description style="font-weight: 900;color: black;">
+                      Score </mat-panel-description>
+                  </div>
+                </mat-expansion-panel-header>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+            <mat-accordion style="width: 100%;" class="field">
+              <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{res.Team_1}}
+                  </mat-panel-title>
+                  <div style="text-align: right;">
+                    <mat-panel-description style="font-weight: 900;">
+                      {{res.Team_1Score}} </mat-panel-description>
+                  </div>
+                </mat-expansion-panel-header>
+
+                <b>{{res.Team_1Name}}</b>
+
+
+
+              </mat-expansion-panel>
+            </mat-accordion>
+            <mat-accordion style="width: 100%;" class="field">
+              <!-- <mat-expansion-panel hideToggle *ngFor="let book of Books; let i = index" style="width: 60%;margin-left: 20%;"> -->
+              <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{res.Team_2}}
+                  </mat-panel-title>
+                  <div style="text-align: right;">
+                    <mat-panel-description style="font-weight: 900;">
+                      {{res.Team_2Score}} </mat-panel-description>
+                  </div>
+                </mat-expansion-panel-header>
+
+                <b>{{res.Team_2Name}}</b>
+
+              </mat-expansion-panel>
+            </mat-accordion>
+            <mat-accordion style="width: 100%;" class="field">
+              <!-- <mat-expansion-panel hideToggle *ngFor="let book of Books; let i = index" style="width: 60%;margin-left: 20%;"> -->
+              <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{res.Team_3}}
+                  </mat-panel-title>
+                  <div style="text-align: right;">
+                    <mat-panel-description style="font-weight: 900;">
+                      {{res.Team_3Score}} </mat-panel-description>
+                  </div>
+                </mat-expansion-panel-header>
+
+                <b>{{res.Team_3Name}}</b>
+
+
+              </mat-expansion-panel>
+            </mat-accordion>
+            <mat-accordion style="width: 100%;" class="field">
+              <!-- <mat-expansion-panel hideToggle *ngFor="let book of Books; let i = index" style="width: 60%;margin-left: 20%;"> -->
+              <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{res.Team_4}}
+                  </mat-panel-title>
+                  <div style="text-align: right;">
+                    <mat-panel-description style="font-weight: 900;">
+                      {{res.Team_4Score}} </mat-panel-description>
+                  </div>
+                </mat-expansion-panel-header>
+
+                <b>{{res.Team_4Name}}</b>
+
+              </mat-expansion-panel>
+            </mat-accordion>
+            <!-- <table style="margin-left:25%;">
+            <tr>
+              <th>Team</th>
+              <th style="text-align: right;">Score</th>
+            </tr>
+            <tr>
+              <td>
+                <p>{{ res.Team_1 }}</p>
+                    </td>
+                    <td>
+                      <p style="text-align: right;">{{res.Team_1Score}}</p>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>{{ res.Team_2 }}</p>
+                      </td>
+                      <td>
+                        <p style="text-align: right;">{{res.Team_2Score}}</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>{{ res.Team_3 }}</p>
+                      </td>
+                      <td>
+                        <p style="text-align: right;">{{res.Team_3Score}}</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>{{ res.Team_4 }}</p>
+                      </td>
+                      <td>
+                        <p style="text-align: right;">{{res.Team_4Score}}</p>
+                      </td>
+                    </tr>
+                    </table> -->
+          </mat-card-content>
+          <!-- <a href="/admin/scores/{{res._id}}" routerLink="/admin/scores/{{res._id}}">
+          <img _ngcontent-byl-c56="" src="../../assets/Vector.png" alt="" class="isvg">
+        </a> -->
+          <div class="buttons">
+            <button routerLink="/admin/scores/{{res._id}}">Edit </button>
+            <button (click)="deleteAvsB(res._id)">Delete</button>
+          </div>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title style="align-items:center; text-align: center;"> Match Overview </mat-panel-title>
+              <!-- <mat-panel-description> Won by H-11 </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <p>{{res.match_review}}</p>
+          </mat-expansion-panel>
+      </mat-card>
+    </div>
+
+      <!-- Design of A vs B Type -->
+      <div *ngFor="let res of AvsBScore; let i = index" >
+      <mat-card class="scorescard" *ngIf="res.type==='Gc'" (click)="toggleview(i)">
+        <mat-card-title style="font-size: medium;" panelOpenState="true;" (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+          <h2>{{ res.sport }}</h2>
+        </mat-card-title>
+        <mat-card-content>
+          <mat-progress-bar mode="indeterminate" style="width: 80%; margin: auto"></mat-progress-bar>
+          <div class="scoreboard">
+            <div class="scoreboard_name">
+              {{res.Team_A}}
+            </div>
+            <div class="scoreboard_name">
+              {{res.Team_B}}
+            </div>
+            <div class="scoreboard_score" style="color: blue;">
+              {{res.Team_AScore}}
+            </div>
+            <div class="scoreboard_score">
+              {{res.Team_BScore}}
+            </div>
+            <div class="scoreboard_pname">
+              {{res.Team_AName}}
+            </div>
+            <div class="scoreboard_pname">
+              {{res.Team_BName}}
+            </div>
+          </div>
+          <div class="buttons">
+            <button routerLink="/admin/scores/{{res._id}}">Edit </button>
+            <button (click)="deleteAvsB(res._id)">Delete</button>
+          </div>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title style="align-items:center; text-align: center;"> Match Overview </mat-panel-title>
+              <!-- <mat-panel-description> Won by H-11 </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <p>{{res.match_review}}</p>
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+    <div *ngFor="let res of CricketScore; let i = index" >
+      <mat-card class="scorescard" *ngIf="res.type==='Gc'" (click)="toggleview(i)">
+        <mat-card-title style="font-size: medium" panelOpenState="true;" (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+          <h2>{{ res.sport }} Cricket</h2>
+        </mat-card-title>
+        <mat-card-content>
+
+          <mat-progress-bar mode="indeterminate" style="width: 80%; margin: auto"></mat-progress-bar>
+
+          <!-- <mat-accordion style="width: 100%;" class="field">
+            <mat-expansion-panel hideToggle style="width: 100%;" >
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{res.Team_a}}
+                </mat-panel-title>
+                <div style="text-align: right;">
+                  <mat-panel-description style="font-weight: 900;">
+                    {{res.Team_aRuns}} / {{res.Team_awickets}}</mat-panel-description>
+                </div>
+              </mat-expansion-panel-header>
+
+              <b>Team Members</b>
+              <li>Member one</li>
+              <b><i>Details</i></b>
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laboriosam nihil, quis
+                necessitatibus quaerat soluta nostrum magnam repellendus debitis ea accusantium aperiam? Aspernatur
+                minima provident tempora, fuga sint ut unde voluptas necessitatibus autem velit.
+              </p>
+
+
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion style="width: 100%;" class="field">
+            <mat-expansion-panel hideToggle style="width: 100%;" >
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{res.Team_b}}
+                </mat-panel-title>
+                <div style="text-align: right;">
+                  <mat-panel-description style="font-weight: 900;">
+                    {{res.Team_bRuns}} / {{res.Team_bwickets}}</mat-panel-description>
+                </div>
+              </mat-expansion-panel-header>
+
+              <b>Team Members</b>
+              <li>Member one</li>
+              <b><i>Details</i></b>
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laboriosam nihil, quis
+                necessitatibus quaerat soluta nostrum magnam repellendus debitis ea accusantium aperiam? Aspernatur
+                minima provident tempora, fuga sint ut unde voluptas necessitatibus autem velit.
+              </p>
+
+
+            </mat-expansion-panel>
+          </mat-accordion> -->
+          <div class="scoreboard01">
+            <div class="team_name" style="font-weight: bold;">
+              {{res.Team_a}}
+            </div>
+            <div class="team_score" style="font-weight: bold;">
+              {{res.Team_aRuns}} / {{res.Team_awickets}}
+            </div>
+            <div class="team_name">
+              {{res.Team_b}}
+            </div>
+            <div class="team_score">
+              {{res.Team_bRuns}} / {{res.Team_bwickets}}
+            </div>
+            <div class="msg" style="margin-top: 10px;">
+              <!-- {{res.Team_b}} won by {{res.Team_bRuns - res.Team_aRuns}} runs. -->
+              {{res.Team_b}} won by {{10 - res.Team_bwickets}} wickets.
+            </div>
+          </div>
+
+
+          <div class="buttons">
+            <button routerLink="/admin/scores/{{res._id}}">Edit </button>
+            <button (click)="deleteCricket(res._id)">Delete</button>
+          </div>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title style="align-items:center; text-align: center;"> Match Overview </mat-panel-title>
+              <!-- <mat-panel-description> Won by H-11 </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <p>{{res.match_review}}</p>
+          </mat-expansion-panel>
+
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+    </ng-template>
+
+  </mat-tab>
+
+
+  <mat-tab label="Standings" id="standings">
+    <ng-template matTabContent>
+      <div id="container">
+        <highcharts-chart *ngIf="chartOptions" [Highcharts]="highcharts" [options]="chartOptions"
+          style="width: 100%; height: 400px; display: block">
+        </highcharts-chart>
+
+</div>
+      <!-- <app-news></app-news> -->
+    </ng-template>
+  </mat-tab>
+  <!--
+  <mat-tab label="Leagacy" id='legacy'>
+
+
+    <ng-template matTabContent style="opacity: 0;">
+      <mat-accordion>
+
+        <mat-expansion-panel panelOpenState=true; (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+          style="width: 100%;margin-top: 2%;">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="font-size: large;" *ngFor="let sport of Sport;">
+              GC 2019
+            </mat-panel-title>
+            <mat-panel-description>
+              Won by H-3
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+            style="width: 100%;border-collapse: collapse;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);border-color: black;border-style: mixed;text-align: center;opacity: 0.7;">
+
+            <ng-container matColumnDef="rank1" style="width: 32px;
+                    border-right: 1px solid currentColor;
+                    padding-right: 24px;
+                    text-align: center;">
+              <th mat-header-cell *matHeaderCellDef
+                style="font-family: Arial, Helvetica, sans-serif;font-rank2: bolder;font-size: x-large;"> Sport </th>
+              <td style="font-rank2: bolder;color: black;" mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank1">
+              <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank2">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/silver.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+            </ng-container>
+            <ng-container matColumnDef="rank3">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/bronze.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
+
+
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+          style="width: 100%;margin-top: 0.5%;">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="font-size: large;">
+              GC 2018
+            </mat-panel-title>
+            <mat-panel-description>
+              Won by H-11
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+            style="width: 100%;border-collapse: collapse;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);border-color: black;border-style: mixed;text-align: center;align-content: left;">
+
+            <ng-container matColumnDef="rank1" style="width: 32px;
+                    border-right: 1px solid currentColor;
+                    padding-right: 24px;
+                    text-align: center;">
+              <th mat-header-cell *matHeaderCellDef
+                style="font-family: Arial, Helvetica, sans-serif;font-rank2: bolder;font-size: x-large;"> Sport </th>
+              <td style="font-rank2: bolder;color: black;" mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank1">
+              <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank2">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/silver.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+            </ng-container>
+            <ng-container matColumnDef="rank3">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/bronze.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
+
+
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+          style="width: 100%;margin-top: 0.5%;">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="font-size: large;">
+              GC 2017
+            </mat-panel-title>
+            <mat-panel-description>
+              Won by H-7
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+            style="color:indigo;width: 100%;border-collapse: collapse;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);border-color: black;border-style: mixed;text-align: center;opacity: 0.7;">
+
+            <ng-container matColumnDef="rank1" style="width: 32px;
+                    border-right: 1px solid currentColor;
+                    padding-right: 24px;
+                    text-align: center;">
+              <th mat-header-cell *matHeaderCellDef
+                style="font-family: Arial, Helvetica, sans-serif;font-rank2: bolder;font-size: x-large;"> Sport </th>
+              <td style="font-rank2: bolder;color: black;" mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank1">
+              <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank2">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+            </ng-container>
+            <ng-container matColumnDef="rank3">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
+
+
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+          style="width: 100%;margin-top: 0.5%;">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="font-size: large;">
+              GC 2016
+            </mat-panel-title>
+            <mat-panel-description>
+              Won by H-8
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+            style="color:indigo;width: 100%;border-collapse: collapse;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);border-color: black;border-style: mixed;text-align: center;opacity: 0.7;">
+
+            <ng-container matColumnDef="rank1" style="width: 32px;
+                    border-right: 1px solid currentColor;
+                    padding-right: 24px;
+                    text-align: center;">
+              <th mat-header-cell *matHeaderCellDef
+                style="font-family: Arial, Helvetica, sans-serif;font-rank2: bolder;font-size: x-large;"> Sport </th>
+              <td style="font-rank2: bolder;color: black;" mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank1">
+              <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank2">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/silver.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+            </ng-container>
+            <ng-container matColumnDef="rank3">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/bronze.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
+
+
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" style="width: 100%;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              GC 2016
+            </mat-panel-title>
+            <mat-panel-description>
+              Won by H-5
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+            style="color:indigo;width: 100%;border-collapse: collapse;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);border-color: black;border-style: mixed;text-align: center;opacity: 0.7;">
+
+            <ng-container matColumnDef="rank1" style="width: 32px;
+                    border-right: 1px solid currentColor;
+                    padding-right: 24px;
+                    text-align: center;">
+              <th mat-header-cell *matHeaderCellDef
+                style="font-family: Arial, Helvetica, sans-serif;font-rank2: bolder;font-size: x-large;"> Sport </th>
+              <td style="font-rank2: bolder;color: black;" mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank1">
+              <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank2">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/silver.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+            </ng-container>
+            <ng-container matColumnDef="rank3">
+              <th mat-header-cell *matHeaderCellDef>
+                <img src="../../assets/bronze.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
+
+
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" style="width: 100%;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              GC 2014
+            </mat-panel-title>
+            <mat-panel-description>
+              Won by H-9
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+            style="color:indigo;width: 100%;border-collapse: collapse;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);border-color: black;border-style: mixed;text-align: center;opacity: 0.7;">
+
+            <ng-container matColumnDef="rank1" style="width: 32px;
+                    border-right: 1px solid currentColor;
+                    padding-right: 24px;
+                    text-align: center;">
+              <th mat-header-cell *matHeaderCellDef
+                style="font-family: Arial, Helvetica, sans-serif;font-rank2: bolder;font-size: x-large;"> Sport </th>
+              <td style="font-rank2: bolder;color: black;" mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank1">
+              <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png" style="height: 30px;width: 30px;">
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rank2">
+              <th mat-header-cell *matHeaderCellDef>
+                S </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+            </ng-container>
+            <ng-container matColumnDef="rank3">
+              <th mat-header-cell *matHeaderCellDef>
+                B </th>
+              <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
+
+
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+    </ng-template>
+  </mat-tab>-->
+
+      <mat-tab label="Legacy" id="legacy">
+        <ng-template matTabContent style="opacity: 0">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title> GC 2019-20 </mat-panel-title>
+              <mat-panel-description> Won by The Wild Ones </mat-panel-description>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+              <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Sport </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- rank1 Column -->
+              <ng-container matColumnDef="rank1">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+              </ng-container>
+
+              <!-- rank2 Column -->
+              <ng-container matColumnDef="rank2">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/silver.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+              </ng-container>
+
+              <!-- rank3 Column -->
+              <ng-container matColumnDef="rank3">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/bronze.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title> GC 2018-19 </mat-panel-title>
+              <mat-panel-description> Won by The Wild Ones </mat-panel-description>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+              <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Sport </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- rank1 Column -->
+              <ng-container matColumnDef="rank1">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+              </ng-container>
+
+              <!-- rank2 Column -->
+              <ng-container matColumnDef="rank2">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/silver.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+              </ng-container>
+
+              <!-- rank3 Column -->
+              <ng-container matColumnDef="rank3">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/bronze.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title> GC 2017-18 </mat-panel-title>
+              <mat-panel-description> Won by H-11 </mat-panel-description>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="dataSource3" class="mat-elevation-z8">
+              <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Sport </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- rank1 Column -->
+              <ng-container matColumnDef="rank1">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+              </ng-container>
+
+              <!-- rank2 Column -->
+              <ng-container matColumnDef="rank2">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/silver.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+              </ng-container>
+
+              <!-- rank3 Column -->
+              <ng-container matColumnDef="rank3">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/bronze.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title> GC 2016-17 </mat-panel-title>
+              <mat-panel-description> Won by H-11 </mat-panel-description>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="dataSource4" class="mat-elevation-z8">
+              <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Sport </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- rank1 Column -->
+              <ng-container matColumnDef="rank1">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+              </ng-container>
+
+              <!-- rank2 Column -->
+              <ng-container matColumnDef="rank2">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/silver.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+              </ng-container>
+
+              <!-- rank3 Column -->
+              <ng-container matColumnDef="rank3">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/bronze.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            style="width: 100%; margin-top: 0.5%">
+            <mat-expansion-panel-header>
+              <mat-panel-title> GC 2015-16 </mat-panel-title>
+              <mat-panel-description> Won by H-11 </mat-panel-description>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="dataSource5" class="mat-elevation-z8">
+              <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Sport </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- rank1 Column -->
+              <ng-container matColumnDef="rank1">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/gold.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank1}} </td>
+              </ng-container>
+
+              <!-- rank2 Column -->
+              <ng-container matColumnDef="rank2">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/silver.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank2}} </td>
+              </ng-container>
+
+              <!-- rank3 Column -->
+              <ng-container matColumnDef="rank3">
+                <th mat-header-cell *matHeaderCellDef><img src="../../assets/bronze.png"
+                    style="width: 40px;height: 40px;"></th>
+                <td mat-cell *matCellDef="let element"> {{element.rank3}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </mat-expansion-panel>
+        </ng-template>
+      </mat-tab>
+</mat-tab-group>

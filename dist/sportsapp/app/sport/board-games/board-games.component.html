@@ -1,0 +1,163 @@
+<!-- <div class="heading display-4 mt-5 mb-1">{{sport}}</div> -->
+<mat-menu
+  #menu="matMenu"
+  style="background-color: rgb(43, 35, 56); border-top: purple"
+>
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      sports
+    </mat-icon><a class="nav-link" routerLink="detail" routerLinkActive="active-link"
+      style="margin-left: 13px;color: rgb(220, 125, 198);">{{sport}}</a><br>
+  </button>
+  <button mat-menu-item style="background:rgb(255,255,255); color: white;border-radius: 1px;">
+     <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      events
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="../events"
+      routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >Events</a
+    ><br />
+  </button>
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      book
+    </mat-icon><a class="nav-link" routerLink="rules" routerLinkActive="active-link"
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="rules"
+      routerLinkActive="sport/board_games/rules"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >Rules</a
+    ><br />
+  </button>
+
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      people
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="../people"
+      routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >People</a
+    ><br />
+  </button>
+
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(220, 125, 198); position: absolute; top: 10px">
+      timer_10
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="../matches"
+      routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >Matches</a
+    ><br />
+  </button>
+</mat-menu>
+<div class="sport-name-div" style="margin-top: 10%">
+  <img
+    src="../../assets/boardgames_logo.png"
+    style="float: left; margin-top: -10%"
+  />
+  <div class="heading" style="float: inline-end">Board Games</div>
+</div>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" id="menu-icon">
+  <mat-icon style="font-size: 52px">more_vert</mat-icon>
+</button>
+<!-- <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul> -->
+<!-- <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" id="menu-icon"
+      (click)="drawer1.toggle()">
+      <mat-icon>more_vert</mat-icon>
+    </button> -->
+<!-- <span id="menu-icon" (click)="drawer1.toggle()" class="material-icons">menu</span> -->
+<!-- <mat-drawer-container>
+
+      <mat-drawer role="navigation" #drawer1 position='start' mode="over" style="background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+      background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+      background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);width: 100%;text-align: center;">
+        <a class="nav-link" routerLink="detail" routerLinkActive="active-link" (click)='drawer1.close()'>{{sport}}</a><br>
+        <a class="nav-link" routerLink="events" routerLinkActive="active-link" (click)='drawer1.close()'>Events</a><br>
+        <a class="nav-link" routerLink="rules" routerLinkActive="active-link" (click)='drawer1.close()'>Rules</a><br>
+        <a class="nav-link" routerLink="people" routerLinkActive="active-link" (click)='drawer1.close()'>People</a><br>
+        <a class="nav-link" routerLink="facilities" routerLinkActive="active-link"
+          (click)='drawer1.close()'>Facilities</a><br>
+        <a class="nav-link" routerLink="matches" routerLinkActive="active-link" (click)='drawer1.close()'>Matches</a><br>
+      </mat-drawer>
+
+      <mat-drawer-content> -->
+
+<!-- </mat-drawer-content>
+    </mat-drawer-container> -->
+<!-- </mat-card> -->
+<mat-card
+  class="mat-drawer-container container"
+  style="background: transparent; box-shadow: none"
+>
+  <div>
+    <ul class="customIndent">
+      <li>
+        Room Timings <br />
+        The Board Games room, Old Snooker room and the Chess Room all remain
+        Open from 6:00 am to 10:00 pm everyday except for national holidays and
+        special day offs.
+      </li>
+      <li>
+        Cue Stick Maintenance <br />
+        The tip of the cue stick wears down with frequent usage. So it is
+        important to keep replacing the tip of the stick on regular intervals.
+        You can buy the required stuff
+        <a
+          href="https://www.amazon.in/s?k=cue+tip&rh=n%3A3403786031&dc&fst=as%3Aoff&qid=1462429383&rnid=3576079031&ref=sr_nr_n_1"
+          >here</a
+        >. The detailed procedure for the same is available
+        <a href="https://www.youtube.com/watch?v=E2cqaAH0hQ4">here</a>.
+      </li>
+      <li>
+        Board Games Room Location <br />
+        The Board Games Room and the Chess Room are located in the New Gymkhana
+        Building opposite Hostel 11. The Old Snooker room is located in the Old
+        SAC (next to MI Room) opposite Hostel 1.
+      </li>
+    </ul>
+  </div>
+
+  <router-outlet></router-outlet>
+</mat-card>

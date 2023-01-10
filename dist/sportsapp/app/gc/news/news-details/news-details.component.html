@@ -1,0 +1,29 @@
+<div class="body">
+    <div class="title">
+        {{news.title}}
+    </div>
+    <div class="about">
+        <!--<img class="avatar" src="../assets/avatar1.png" >
+        <div class="poster">
+          {{news.poster}}
+        </div>-->
+        <div class="date">
+          <mat-icon>schedule</mat-icon><span class="inline"> {{news.date}}</span>
+        </div>
+    </div>
+    
+    <div class="image">
+        <img src="{{news.photo}}" alt="image">
+    </div>
+    
+    <div class="content" [innerHTML]="news.info"></div>
+    <div class="tags">
+      Tags:
+      <mat-chip-list>
+          <mat-chip *ngFor="let tag of news.tags">
+          {{tag}}
+          </mat-chip>
+      </mat-chip-list>
+      <br>
+    </div>
+    </div>

@@ -175,6 +175,7 @@ export class AdminBlogComponent implements OnInit {
     this.adminService.addBlog(this.addBlogForm.value).subscribe(
       () => {
         console.log(this.addBlogForm.value);
+        this.router.navigate(['/admin']);
         // this.ngZone.run(() => this.router.navigateByUrl('/admin'))
       },
       (err) => {

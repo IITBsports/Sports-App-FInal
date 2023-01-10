@@ -1,0 +1,77 @@
+<h1 style="color:white;font-family: cursive;text-align: center; margin-top:20px;" class="mb-5">Admin Panel</h1>
+<div class="container">
+
+  <mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'20px'">
+    <mat-grid-tile routerLink="blog" [colspan]=2 [rowspan]=1 [style.background]="'lightblue'">
+      <mat-grid-tile-footer style="font-family: cursive;color: rgb(255, 255, 255);background-color:black;">
+        Blog</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="event" [colspan]=2 [rowspan]=1 [style.background]="'lightblue'">
+
+      <mat-grid-tile-footer style="font-family: cursive;color: rgb(255, 255, 255);background-color:black;">
+        Event</mat-grid-tile-footer>
+
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="scores" [colspan]=2 [rowspan]=1 [style.background]="'lightblue'">
+      <mat-grid-tile-footer style="font-family: cursive;color: rgb(255, 255, 255);background-color:black;">
+        Scores</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="sport-detail" [colspan]=2 [rowspan]=1 [style.background]="'lightblue'">
+      <mat-grid-tile-footer style="font-family: cursive;color: rgb(255, 255, 255);background-color:black;">
+        Sport Detail</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="certificates" [colspan]=2 [rowspan]=1 [style.background]="'lightblue'">
+      <mat-grid-tile-footer
+        style="font-family: cursive;color: rgb(255, 255, 255);background-color:black;text-align: center;">
+        Certificates</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="points" [colspan]=2 [rowspan]=1 [style.background]="'lightblue'">
+      <mat-grid-tile-footer
+        style="font-family: cursive;color: rgb(255, 255, 255);background-color:black;text-align: center;">
+        Points</mat-grid-tile-footer>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
+
+<!--<h1 style="color:white;font-family: cursive;text-align: center;margin-top: 8%;" class="mb-5">Get CSV data</h1>
+Enter Ldap to compare
+<div style="background-color: rgb(212, 159, 219);padding: 2%;font-size:smaller;margin: 5%;margin-top: 0%;">
+  <mat-form-field class="col-sm-12 sm-2">
+    <textarea matInput placeholder="Enter Ldap"></textarea>
+  </mat-form-field>
+</div>
+Button to download csv file--><br><br><br>
+<button mat-raised-button matTooltip="Info about the action" [matTooltipShowDelay]="Ldap.value"
+  style="width: fit-content;background-color: rgb(32, 116, 211);margin-left: 5%;width: 90%;" class="btn btn-primary"
+  (click)="download()">
+  Download CSV
+</button>
+
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+    let imagesPreview = function (input, placeToInsertImagePreview) {
+      if (input.files) {
+        let filesAmount = input.files.length;
+        for (i = 0; i < filesAmount; i++) {
+          let reader = new FileReader();
+          reader.onload = function (event) {
+            $($.parseHTML("<img>"))
+              .attr("src", event.target.result)
+              .appendTo(placeToInsertImagePreview);
+          };
+          reader.readAsDataURL(input.files[i]);
+        }
+      }
+    };
+    $("#input-files").on("change", function () {
+      imagesPreview(this, "div.preview-images");
+    });
+  });
+
+</script>

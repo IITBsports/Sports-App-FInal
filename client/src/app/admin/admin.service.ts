@@ -8,15 +8,15 @@ import {
 import { catchError, map } from 'rxjs/operators';
 import { request } from 'http';
 import { Observable, throwError } from 'rxjs';
-import { Event } from './../../../../server/models/events.js';
-import { Blog } from './../../../../server/models/blog.js';
-import { People } from './../../../../server/models/people.js';
-import { RunningEventScore } from '../../../../server/models/RunningEventScore.js';
-import { AvsBScore } from '../../../../server/models/AvsBScore.js';
-import { CricketScore } from '../../../../server/models/CricketScore.js';
-import { Url } from '../../../../server/models/Url.js';
-import { Points } from '../../../../server/models/Points.js';
-import {banuser} from '../../../../server/models/banUser.js'
+import { Event } from './../models/events.js';
+import { Blog } from './../models/blog.js';
+import { People } from './../models/people.js';
+import { RunningEventScore } from './../models/RunningEventScore.js';
+import { AvsBScore } from './../models/AvsBScore.js';
+import { CricketScore } from './../models/CricketScore.js';
+import { Url } from './../models/Url.js';
+import { Points } from './../models/Points.js';
+import {banuser} from './../models/banUser.js'
 
 @Injectable({
   providedIn: 'root',

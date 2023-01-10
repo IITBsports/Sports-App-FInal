@@ -1,0 +1,329 @@
+<form class="example-form" [formGroup]="main">
+  <select class="form-control" id="type" formControlName="typeofScore">
+    <option value="default">--Select a Type--</option>
+    <option *ngFor="let t of type;" [ngValue]="t">{{t}}</option>
+    {{typeofScore}}
+
+  </select>
+  <select class="form-control" id="typeSelect" formControlName="type">
+    <option value="default">--Select a Type--</option>
+    <option *ngFor="let t of typeSelect;" [ngValue]="t">{{t}}</option>
+    {{type}}
+
+  </select>
+  <mat-card style="margin-bottom: 10px;">
+    <mat-card-content>
+
+
+      <form class="example-form" [formGroup]="addRunningEventScoreForm" (ngSubmit)="onSubmit()">
+
+        <span *ngIf="main.value.typeofScore==='Running-Event'">
+          <select class="form-control" id="typeSelect" formControlName="type">
+            <option value="default">--Select a Type--</option>
+            <option *ngFor="let t of typeSelect;" [ngValue]="t">{{t}}</option>
+            {{type}}
+
+          </select>
+
+          <select class="form-control" id="sport" formControlName="sport">
+            <option value="default">--Select a Sport--</option>
+            <option *ngFor="let s of sports;" [ngValue]="s">{{s}}</option>
+          </select>
+
+
+
+          <select class="form-control" id="Eventtype" formControlName="Eventtype">
+            <option value="default">--Select a Running-Event type--</option>
+            <option *ngFor="let t of runningEventtype;" [ngValue]="t">{{t}}</option>
+          </select>
+          <select class="form-control" id="matchtype" formControlName="match_type">
+            <option value="default">--Select a Match type--</option>
+            <option *ngFor="let t of matchType;" [ngValue]="t">{{t}}</option>
+          </select>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="match-title" type="text" formControlName="match_title" required #matchTitle>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 100%;height:30%;">
+            <mat-form-field>
+              <textarea matInput placeholder="match-review" type="text" formControlName="match_review" required
+                #matchReview></textarea>
+            </mat-form-field>
+          </div>
+
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_1">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_1">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_1Score" type="number" id="Team_1Score" formControlName="Team_1Score"
+                required #Team_1Score>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_1Name" type="text" formControlName="Team_1Name" required #Team_1Name>
+            </mat-form-field>
+          </div>
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_2">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_2">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_2Score" type="number" id="Team_2Score" formControlName="Team_2Score"
+                required #Team_2Score>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_2Name" type="text" formControlName="Team_2Name" required #Team_2Name>
+            </mat-form-field>
+          </div>
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_3">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_3">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_3Score" type="number" id="Team_3Score" formControlName="Team_3Score"
+                required #Team_3Score>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_3Name" type="text" formControlName="Team_3Name" required #Team_3Name>
+            </mat-form-field>
+          </div>
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_4">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_4">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_4Score" type="number" id="Team_4Score" formControlName="Team_4Score"
+                required #Team_4Score>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_4Name" type="text" formControlName="Team_4Name" required #Team_4Name>
+            </mat-form-field>
+          </div>
+
+
+          <button type="submit" style="background-color: blue;width: 100%;" class="form-group">Submit</button>
+
+
+          <div class="Buttons" style="margin-top: 5%;"><a href="admin" style="color: rgb(253, 253, 253);">
+              <button RouterLink="admin" type="cancel" style="background-color: rgba(168, 162, 162, 0.219);width: 100%;"
+                class="btn btn-default">Go
+                Back</button></a></div>
+        </span>
+
+      </form>
+      <form class="example-form" [formGroup]="addAvsBScoreForm" (ngSubmit)="onSubmit()">
+
+        <span *ngIf="main.value.typeofScore==='AvsB'">
+          <select class="form-control" id="typeSelect" formControlName="type">
+            <option value="default">--Select a Type--</option>
+            <option *ngFor="let t of typeSelect;" [ngValue]="t">{{t}}</option>
+            {{type}}
+
+          </select>
+
+          <select class="form-control" id="sport" formControlName="sport">
+            <option value="default">--Select a Sport--</option>
+            <option *ngFor="let s of sports;" [ngValue]="s">{{s}}</option>
+          </select>
+
+          <mat-divider></mat-divider>
+          <select class="form-control" id="type" formControlName="typeofScore">
+            <option value="default">--Select a Type--</option>
+            <option *ngFor="let t of type;" [ngValue]="t">{{t}}</option>
+            {{typeofScore}}
+
+          </select>
+          <select class="form-control" id="matchtype" formControlName="match_type">
+            <option value="default">--Select a Match type--</option>
+            <option *ngFor="let t of matchType;" [ngValue]="t">{{t}}</option>
+          </select>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="match-title" type="text" formControlName="match_title" required #matchTitle>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="match-review" type="text" formControlName="match_review" required
+                #matchReview>
+            </mat-form-field>
+          </div>
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_A">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_A">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_AScore" type="number" id="Team_AScore" formControlName="Team_AScore"
+                required #Team_AScore>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_AName" type="text" formControlName="Team_AName" required #Team_AName>
+            </mat-form-field>
+          </div>
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_B">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_B">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_BScore" type="number" id="Team_BScore" formControlName="Team_BScore"
+                required #Team_BScore>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_BName" type="text" formControlName="Team_BName" required #Team_BName>
+            </mat-form-field>
+          </div>
+
+          <button type="submit" style="background-color: blue;width: 100%;" class="form-group">Submit</button>
+
+
+          <div class="Buttons" style="margin-top: 5%;"><a href="admin" style="color: rgb(253, 253, 253);">
+              <button RouterLink="admin" type="cancel" style="background-color: rgba(168, 162, 162, 0.219);width: 100%;"
+                class="btn btn-default">Go
+                Back</button></a></div>
+        </span>
+      </form>
+      <form class="example-form" [formGroup]="addCricketScoreForm" (ngSubmit)="onSubmit()">
+
+        <span *ngIf="main.value.typeofScore==='Cricket'">
+          <select class="form-control" id="typeSelect" formControlName="type">
+            <option value="default">--Select a Type--</option>
+            <option *ngFor="let t of typeSelect;" [ngValue]="t">{{t}}</option>
+            {{type}}
+
+          </select>
+
+          <select class="form-control" id="sport" formControlName="sport">
+            <option value="default">--Select a Sport--</option>
+            <option *ngFor="let s of sports;" [ngValue]="s">{{s}}</option>
+          </select>
+
+          <mat-divider></mat-divider>
+          <select class="form-control" id="type" formControlName="typeofScore">
+            <option value="default">--Select a Type--</option>
+            <option *ngFor="let t of type;" [ngValue]="t">{{t}}</option>
+            {{typeofScore}}
+
+          </select>
+          <select class="form-control" id="matchtype" formControlName="match_type">
+            <option value="default">--Select a Match type--</option>
+            <option *ngFor="let t of matchType;" [ngValue]="t">{{t}}</option>
+          </select>
+
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="match-title" type="text" formControlName="match_title" required #matchTitle>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="match-review" type="text" formControlName="match_review" required
+                #matchReview>
+            </mat-form-field>
+          </div>
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_a">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_a">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_aRuns" type="number" id="Team_aScore" formControlName="Team_aRuns"
+                required #Team_AScore>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_awickets" type="number" id="Team_awickets"
+                formControlName="Team_awickets" required #Team_awickets>
+            </mat-form-field>
+          </div>
+
+          <div style="width:50%" *ngIf="main.value.type === 'Gc'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList" formControlName="Team_b">
+            </ng-multiselect-dropdown>
+          </div>
+          <div style="width:50%" *ngIf="main.value.type === 'InterIIT'">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList1" formControlName="Team_b">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_bRuns" type="number" id="Team_bRuns" formControlName="Team_bRuns"
+                required #Team_bRuns>
+            </mat-form-field>
+          </div>
+          <div class="form-group" style="width: 10%;display: inline;">
+            <mat-form-field>
+              <input matInput placeholder="Team_bwickets" type="number" id="Team_bwickets"
+                formControlName="Team_bwickets" required #Team_bwickets>
+            </mat-form-field>
+          </div>
+          <button type="submit" style="background-color: blue;width: 100%;" class="form-group">Submit</button>
+
+
+          <div class="Buttons" style="margin-top: 5%;"><a href="admin" style="color: rgb(253, 253, 253);">
+              <button RouterLink="admin" type="cancel" style="background-color: rgba(168, 162, 162, 0.219);width: 100%;"
+                class="btn btn-default">Go
+                Back</button></a></div>
+
+        </span>
+
+      </form>
+
+
+    </mat-card-content>
+  </mat-card>
+</form>

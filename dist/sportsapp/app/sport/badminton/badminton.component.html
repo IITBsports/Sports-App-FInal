@@ -1,0 +1,122 @@
+<!-- <div class="heading display-4 mt-5 mb-1">{{sport}}</div> -->
+<mat-menu #menu="matMenu" style="background-color: rgb(43, 35, 56); border-top: purple">
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      sports
+    </mat-icon><a class="nav-link" routerLink="detail" routerLinkActive="active-link"
+      style="margin-left: 13px;color: rgb(220, 125, 198);">{{sport}}</a><br>
+  </button>
+  <button mat-menu-item style="background:rgb(255,255,255); color: white;border-radius: 1px;">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      events
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../events" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Events</a><br />
+  </button>
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      book
+    </mat-icon><a class="nav-link" routerLink="rules" routerLinkActive="active-link"
+    </mat-icon> -->
+    <a class="nav-link" routerLink="rules" routerLinkActive="sport/badminton/rules"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Rules</a><br />
+  </button>
+
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      people
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../people" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">People</a><br />
+  </button>
+
+  <button mat-menu-item style="background: rgb(255, 255, 255); color: white; border-radius: 1px">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(220, 125, 198); position: absolute; top: 10px">
+      timer_10
+    </mat-icon> -->
+    <a class="nav-link" routerLink="../matches" routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)">Matches</a><br />
+  </button>
+</mat-menu>
+<div class="sport-name-div" style="margin-top: 10%">
+  <img src="{{ image }}" style="float: left; margin-top: -10%" />
+  <div class="heading" style="float: inline-end">
+    {{ sport | uppercase }}
+  </div>
+</div>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" id="menu-icon">
+  <mat-icon style="font-size: 52px">more_vert</mat-icon>
+</button>
+  <!-- <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul> -->
+  <!-- <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" id="menu-icon"
+      (click)="drawer1.toggle()">
+      <mat-icon>more_vert</mat-icon>
+    </button> -->
+  <!-- <span id="menu-icon" (click)="drawer1.toggle()" class="material-icons">menu</span> -->
+  <!-- <mat-drawer-container>
+  
+      <mat-drawer role="navigation" #drawer1 position='start' mode="over" style="background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+      background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+      background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);width: 100%;text-align: center;">
+        <a class="nav-link" routerLink="detail" routerLinkActive="active-link" (click)='drawer1.close()'>{{sport}}</a><br>
+        <a class="nav-link" routerLink="events" routerLinkActive="active-link" (click)='drawer1.close()'>Events</a><br>
+        <a class="nav-link" routerLink="rules" routerLinkActive="active-link" (click)='drawer1.close()'>Rules</a><br>
+        <a class="nav-link" routerLink="people" routerLinkActive="active-link" (click)='drawer1.close()'>People</a><br>
+        <a class="nav-link" routerLink="facilities" routerLinkActive="active-link"
+          (click)='drawer1.close()'>Facilities</a><br>
+        <a class="nav-link" routerLink="matches" routerLinkActive="active-link" (click)='drawer1.close()'>Matches</a><br>
+      </mat-drawer>
+  
+      <mat-drawer-content> -->
+  
+  <!-- </mat-drawer-content>
+    </mat-drawer-container> -->
+  <!-- </mat-card> -->
+  <mat-card class="mat-drawer-container container" style="background: transparent; box-shadow: none;">
+    <div>
+        <ul class="customIndent">
+            <li>Only IIT Bombay students, staff and faculty possessing a valid IIT Bombay identity card are allowed
+            </li>
+            <li>IIT Bombay alumni are allowed to use the courts only on Saturday and Sunday from 9:00AM to 5:00PM
+            </li>
+            <li>Gum soled Badminton shoes are mandatory when using the courts. Running shoes and other gum soled shoes are strictly not permitted
+            </li>
+            <li>T-shirts and shorts are compulsory for everyone. In case of improper attire, entry to the courts shall be denied.
+            </li>
+            <li>Courts may be pre-reserved for Institute events or team practice. Information regarding the same will be put up on the notice board.
+            </li>
+            <li>2nd court from the stage side is reserved for girls. NO court is reserved for the staff and faculty
+            </li>
+            <li>Players must make an entry in the logbook on entering and leaving the courts
+            </li>
+            <li>IIT Bombay Sports will enforce the rules of court play through the council and the caretakers of the courts.
+            </li>
+            <li>Damage to the courts or equipment would imply a strict disciplinary action and fine against the offender
+            </li>
+        </ul>
+    </div>
+  
+    <router-outlet></router-outlet>
+  
+  
+  </mat-card>
+  

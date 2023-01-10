@@ -1,0 +1,103 @@
+<!-- <div class="body">
+  <div class="title">
+    {{title}}
+  </div>
+  <div class="about">
+    <img class="avatar" src="../assets/avatar1.png">
+    <div class="poster">
+      {{poster}}
+    </div>
+    <div class="date">
+      {{date}}Date appears here
+    </div>
+  </div>
+
+  <div class="image">
+    <img src="../assets/aavhanrun.jpg" alt="image" style="width:94%;">
+  </div>
+
+  <div class="content" [innerHTML]="info"></div>
+
+  <div class="tags">
+    Tags:
+    <mat-chip-list>
+      <mat-chip *ngFor="let tag of tags">
+        {{tag}}
+      </mat-chip>
+    </mat-chip-list>
+    <br>
+  </div>
+  <div style="margin-right: 0%;margin-left: 80%;">
+    <button *ngIf="!isEditable" mat-fab color="primary" (click)="onEditClick()" style="margin-right: 0%;">
+      <mat-icon routerLink="admin/post">edit</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+
+
+  </div>
+</div> -->
+
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+<div class="body" style="height:auto">
+  <div class="titlebox">
+    <div class="title">
+      {{Blog.title}}
+    </div>
+  </div>
+
+  <div class="poster">
+    <img class="img" src="./../../assets/{{Blog.images}}">
+  </div>
+
+  <div class="about">
+
+    <div class="date">
+      <!-- <mat-icon>schedule</mat-icon> -->
+      <img src="../assets/image.png" style="width: 25px;height: 25px;margin-left: 5px;">
+      {{Blog.date_created}}
+    </div>
+    <!--Events.content is not showning up-->
+    <div class="description" style="display: flex;height: fit-content;">
+      {{Blog.description}}
+    </div>
+
+
+    <!--!!!backend has to be done of this button!!!-->
+
+
+    <!-- <div *ngIf="Events.isPostEvent; else elseBlock">Text to show</div> -->
+    <!-- <div *ngIf="Events.isPostEvent; else elseBlock">{{Events.postEventDescription}}</div>
+    <ng-template #elseBlock>{{Events.description}}</ng-template> -->
+  </div>
+<!--
+</div> -->
+
+
+
+
+
+
+
+
+
+
+<!--TAGS-->
+<div class="tags">
+  <div class="tagspiece">
+
+
+    <!-- <p class="singletag" *ngFor="let tag of Events.tags;index as i">{{Events.tags[i]}}
+      </p> -->
+    <!-- <mat-chip *ngFor = "let tag of tags">{{tag}}</mat-chip> -->
+    <mat-chip class="singletag" *ngFor="let tags of Blog.tags;index as i"  [routerLink]="['/sport',Blog.tags[i]]">{{Blog.tags[i]}}</mat-chip>
+  </div>
+</div>
+<a routerLink="/" *ngIf="this.user.is_admin==true">
+  <img _ngcontent-byl-c56="" src="../../assets/Vector (1).png" alt="" class="isvg" (click)="delete(Blog._id)">
+</a>
+
+</div>
+

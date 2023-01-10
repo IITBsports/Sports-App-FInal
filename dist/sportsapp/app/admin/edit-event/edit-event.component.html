@@ -1,0 +1,124 @@
+<form class="example-form" [formGroup]="editEventForm" (ngSubmit)="onUpdate()">
+
+
+  <!-- Upload image  -->
+  <div class="form-group">
+    <div class="avatar-edit"><img (click)="fileInput.click()" [src]="imageUrl || '../assets/img_preview.jpeg'"
+        style="height: 100%;width: 100%;">
+      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" #fileInput (change)="uploadFile($event)" required
+        style="height: 0px;width:0px;" />
+    </div>
+    <div id="imagePreview" [style.backgroundImage]="'url('+ imageUrl +')'" style="height: 100%;width: 100%;">
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  <mat-card style="margin-bottom: 10px;">
+    <mat-card-content>
+
+      <mat-card-content>
+        <div class="form-group">
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="Title" type="text" id="eventTitle" formControlName="title" required
+              #eventTitle>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="Content" type="text" id="eventContent" formControlName="desc" required
+              #eventContent>
+          </mat-form-field>
+        </div>
+
+        <select class="form-control" id="sport" formControlName="sport">
+          <option value="default">--Select a Sport--</option>
+          <option *ngFor="let s of sports;" [ngValue]="s">{{s}}</option>
+        </select>
+        <div class="form-group">
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="Event-Venue" type="text" id="eventVenue" formControlName="venue" #eventVenue>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="url" type="text" id="url" formControlName="url" #url>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="fb_url" type="text" id="fb_url" formControlName="fb_url" #fb_url>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="insta_url" type="text" id="insta_url" formControlName="insta_url" #insta_url>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="eventWinner_1" type="text" id="eventWinner_1" formControlName="eventWinner_1" #eventWinner_1>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="eventWinner_2" type="text" id="eventWinner_2" formControlName="eventWinner_2" #eventWinner_2>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+            <input matInput placeholder="eventWinner_3" type="text" id="eventWinner_3" formControlName="eventWinner_3" #eventWinner_3>
+          </mat-form-field>
+
+          <mat-form-field>
+            Date
+            <input matInput [matDatepicker]="picker" formControlName="date" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <!-- <div class="form-group">
+              <mat-form-field class="example-full-width" style="text-align: justify;width: 80%;">
+                <input matInput placeholder="Sport" type="text" id="sport" formControlName="sport" #sport>
+              </mat-form-field>
+            </div> -->
+      </mat-card-content>
+
+      <select class="form-control" id="isPostEvent" formControlName="isPostEvent">
+        <option value="default">--Yes/No--</option>
+        <option *ngFor="let b of bool;" [ngValue]="b">{{b}}</option>
+      </select>
+
+
+      <label style="text-align: justify;">Tags</label>
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let tag of tags" [selectable]="selectable" [removable]="removable" (removed)="remove(tag)">
+          {{tag}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input style="width: 10%;" placeholder="Add tags" #tagInput [formControl]="tagCtrl" [matAutocomplete]="auto"
+          [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)" class="form-control">
+      </mat-chip-list>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+          {{tag}}
+        </mat-option>
+      </mat-autocomplete>
+      <div class="form-group">
+        <mat-form-field appearance="fill" style="width: 80%;margin-left: 10%;" class="field">
+          <mat-label style="font-size: medium;">Enter postEventDescription</mat-label>
+
+          <textarea matInput class="form-control" type="text" formControlName="postEventDescription"
+            style="height: 100px;"></textarea>
+        </mat-form-field>
+      </div>
+
+
+
+    </mat-card-content>
+  </mat-card>
+
+  <button type="submit" style="background-color: blue;width: 100%;" class="form-group">Submit</button>
+
+
+  <div class="Buttons" style="margin-top: 5%;"><a href="admin" style="color: rgb(253, 253, 253);">
+      <button RouterLink="admin" type="cancel" style="background-color: rgba(168, 162, 162, 0.219);width: 100%;"
+        class="btn btn-default">Go
+        Back</button></a></div>
+</form>

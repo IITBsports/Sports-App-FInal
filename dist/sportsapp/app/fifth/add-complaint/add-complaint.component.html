@@ -1,0 +1,63 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-12">
+    <!-- <div> -->
+    <!-- <div> -->
+    <form
+      style="border-radius: 5px;margin-left: 10%;margin-right: 40%;height:450px;width:80%;background-color: rgb(210, 230, 240)">
+      <div class="form-group">
+
+        <mat-form-field appearance="fill" style="width: 80%;margin-left: 10%;margin-top: 5%;" class="field">
+          <mat-label style="font-size: medium;">Enter subject</mat-label>
+          <input matInput class="form-control" type="text" formControlName="name" required
+            style="background-color: rgb(210, 230, 240)">
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" style="border-radius: 5px;">
+        <mat-form-field appearance="fill" style="width: 80%;margin-left: 10%;" class="field">
+          <mat-label>Sport</mat-label>
+          <mat-select formControlName="price">
+            <mat-option price="Chess" value="Chess" style="background-color: rgb(215, 217, 245);">Chess</mat-option>
+            <mat-option price="Cricket" value="Cricket" style="background-color: rgb(215, 217, 245);">Cricket
+            </mat-option>
+            <mat-option price="Hockey" value="Hockey" style="background-color: rgb(215, 217, 245);">Hockey
+            </mat-option>
+
+            <mat-option price="Football" value="Football" style="background-color: rgb(215, 217, 245);">Football
+            </mat-option>
+            <mat-option price="Badminton" value="Badminton" style="background-color: rgb(215, 217, 245);">Badminton
+            </mat-option>
+            <mat-option price="Table-Tennis" value="Table-Tennis" style="background-color: rgb(215, 217, 245);">
+              Table-Tennis
+            </mat-option>
+            <mat-option price="Squash" value="Squash" style="background-color: rgb(215, 217, 245);">Squash
+            </mat-option>
+            <mat-option price="Aquatics" value="Aquatics" style="background-color: rgb(215, 217, 245);">Aquatics
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="fill" style="width: 80%;margin-left: 10%;" class="field">
+          <mat-label style="font-size: medium;">Enter description</mat-label>
+
+          <textarea matInput class="form-control" type="text" formControlName="description" required
+            style="height: 100px;background-color: rgb(210, 230, 240)"></textarea>
+        </mat-form-field>
+      </div>
+
+
+      <div class="form-group" style="text-align:center;margin-top: 3%;margin-bottom: 3%;">
+        <a href="/complaints-list"> <button mat-raised-button price="accent"
+            style="margin-left: 0%;background-color: rgb(107, 107, 153);color: aliceblue;"
+            class="field">Cancel</button></a>
+        <button mat-raised-button price="accent" type="submit" routerLink="/fullmenu"
+          style="margin-left: 20%;background-color: rgb(107, 107, 153);color:aliceblue" class="field">Add
+          Complaint</button>
+
+      </div>
+    </form>
+  </div>
+</div>

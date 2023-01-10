@@ -1,0 +1,253 @@
+/* .image{
+    height: 40%;
+    object-fit: contain;
+    width: 100%;
+}
+.image>img{
+    height: 100%;
+    width: 100%;
+}
+.body{
+    background-color:transparent;
+    color:white;
+    border-radius: 5px;
+    min-width: 100%;
+    min-height: 100%;
+    margin-top: 20px;
+}
+.title{
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.about{
+    margin-top: 5%;
+    font-size: small;
+    font-weight: lighter;
+    margin-left: 10px;
+    margin-bottom: 5%;
+}
+.content{
+    margin-top: 10%;
+    margin-left: 5px;
+
+}
+
+.avatar{
+    width:35px;
+    height:auto;
+    border-radius: 50%;
+    float:left;
+    border: 1px solid white;
+    margin-right:3px;
+}
+.tags{
+    margin-top:20px;
+} */
+
+
+/* * {
+  font-family: 'Arial';
+} */
+
+
+
+.inline {
+  /* position: absolute;*/
+   margin-top: 5px;
+   margin-left: 5px;
+ }
+
+ .social{
+   margin-left: 20%;
+ }
+
+
+
+ .titlebox{
+
+ height: 158px;
+ background: #2F023E;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ border-radius: 0px 0px 40px 40px;
+ align-items:center;
+ justify-content: center;
+ }
+
+ .title {
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 24px;
+   line-height: 29px;
+   text-align: center;
+   padding-top:80px;
+   color: #FFFFFF;
+   text-transform: uppercase;
+
+ }
+
+ .poster{
+ margin-top: -30px;
+   text-align: center;
+     /* box-shadow: 5px 5px 8px rgb(0, 0, 0), 10px 10px 8px rgb(247, 255, 138); */
+   }
+
+   .img{
+     width:314px;
+     height: 314px;
+   }
+
+ .body{
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  max-height: 10000px;
+ }
+
+ .about {
+   justify-content: center ;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+ }
+
+ .date {
+   text-align: center;
+   font-size: large;
+   font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 400;
+ color: #430558;
+ width: 314px;
+ /*  background: linear-gradient(180deg, #A20DD5 31.44%, rgba(149, 8, 197, 0.62916) 74.02%, rgba(127, 0, 170, 0) 114.75%);
+   border-radius: 30px; */
+   margin:auto;
+ }
+
+ .description{
+   font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 300;
+ font-size: 15px;
+ line-height: 21px;
+ text-align: center;
+ height: 40px;
+ color: #430558;
+ padding: 15px;
+ margin-top: 10px;
+ }
+
+ .finalstandings{
+   width: 319px;
+ height: 35px;
+ margin: auto;
+ background: linear-gradient(180deg, #A20DD5 31.44%, rgba(149, 8, 197, 0.62916) 74.02%, rgba(127, 0, 170, 0) 114.75%);
+ border-radius: 30px;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ margin-top: 15px;
+ border: 0px;
+
+ }
+ .bg-panel{
+  /* width: 300px; */
+ margin: auto;
+ /* background: linear-gradient(180deg, #A20DD5 31.44%, rgba(149, 8, 197, 0.62916) 74.02%, rgba(127, 0, 170, 0) 114.75%); */
+ border-radius: 30px;
+ background: #51046B;
+ color: white;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ margin-top: 15px;
+ border: 0px;
+
+ }
+
+ .finalstandingtext{
+   font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 20px;
+ line-height: 29px;
+ text-align: center;
+ color: #FFFFFF;
+ margin-bottom: 0px;
+ }
+
+ .content {   background: #51046B;
+
+   margin-top: 10px;
+   margin-bottom: 15px;
+   font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 300;
+ font-size: 17px;
+ line-height: 21px;
+ padding:17px;
+ color: #ffffff;
+ }
+
+ .instafb{
+   display: flex;
+   justify-content: center;
+ }
+
+ .adddelete{
+   display: flex;
+   justify-content: center;
+ }
+
+
+ img.svg{
+   width: 33px;
+   height: 33px;
+   margin:15px;
+ }
+
+ .isvg{
+   margin:15px;
+   width: 24px;
+ height: 24px;
+ }
+
+ .tags {
+   color: white;
+   padding: 15px;
+ }
+
+ .tagstext{
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 25px;
+   line-height: 29px;
+
+   color: #FFFFFF;
+   margin-bottom: 0px;
+ }
+
+ .tagspiece{
+   display:flex;
+   justify-content: center;
+   padding-top: 8px;
+   align-items: center;
+
+ }
+
+ .singletag{
+   background: linear-gradient(180deg, #A20DD5 31.44%, rgba(149, 8, 197, 0.62916) 74.02%, rgba(127, 0, 170, 0) 114.75%);
+   border-radius: 30px;
+  color: white;
+   text-align: center;
+   width: 200px;
+   height: 30px;
+   margin:5px;
+ }
+
+ .this{
+background-color:#51046B;
+ }
+ .position{
+  color: blue;
+ }

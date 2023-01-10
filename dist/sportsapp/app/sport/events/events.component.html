@@ -1,0 +1,13 @@
+<mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let event of Event_arr" [colspan]="4" [rowspan]="3" style="width: 50%;"
+    [routerLink]="['/event',event._id]">
+    <mat-grid-tile-header style="justify-content:center;color: azure;">
+      <h2>{{event.title}}</h2>
+    </mat-grid-tile-header>
+
+    <img src="./../../assets/{{event.images}}" style="object-fit:fill ;">
+    <mat-grid-tile-footer height="200px" style="justify-content:center;">{{event.venue}}
+    </mat-grid-tile-footer>
+    {{event.desc}}
+  </mat-grid-tile>
+</mat-grid-list>
