@@ -24,6 +24,7 @@
         <a routerLink="gcstandings" (click)="sidenav.toggle()" mat-list-item>GC Tally</a>
         <a routerLink="interiitstandings" (click)="sidenav.toggle()" mat-list-item>Inter-IIT Tally</a>
         <a routerLink="contact-us" (click)="sidenav.toggle()" mat-list-item>Contact Us</a>
+        <a  (click)="logout()" routerLink="login" (click)="sidenav.toggle()" mat-list-item>Logout</a>
         <div *ngIf="user">
           <a routerLink="admin"  *ngIf="user.is_admin" (click)="sidenav.toggle()" mat-list-item>Admin</a></div>
       </mat-nav-list>

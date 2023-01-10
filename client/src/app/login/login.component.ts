@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
       // this.router.navigateByUrl('/home');
       this.router.navigateByUrl('/');
     } else {
-      // this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/login');
     }
   }
 
