@@ -31,7 +31,7 @@ export class FaqsComponent implements OnInit {
       for (let i = 0; i < this.Queries.length; i++) {
         if (this.Queries[i].status == 2) {
 
-          this.Faqs.append(this.Queries[i]);
+          this.Faqs[i] = this.Queries[i];
         }
       }
       console.log(this.Faqs)
