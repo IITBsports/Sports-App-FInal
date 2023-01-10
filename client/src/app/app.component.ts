@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { RefreshPageService } from './refresh-page.service';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 function sleep(delay) {
   var start = new Date().getTime();
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit{
   user_string = '';
   x = '';
   loggedin: boolean = true;
-  constructor(@Inject(DOCUMENT) private document: Document, private cookieService: CookieService, private refreshPageService: RefreshPageService){}
+  constructor(@Inject(DOCUMENT) private document: Document, private cookieService: CookieService, private refreshPageService: RefreshPageService, private router: Router){}
   loginHref = "https://gymkhana.iitb.ac.in/profiles/oauth/authorize/?client_id=H5BclqBYk0P9kOjJXGCXi73uMGrUntQfU4gZMfMk&response_type=code&scope=basic profile program ldap insti_address sex&redirect_uri=http://10.198.49.8:8080/api/login";
   ngOnInit(){
 
@@ -53,7 +54,8 @@ export class AppComponent implements OnInit{
   logout(){
     this.cookieService.removeAll();
     localStorage.removeItem('user-data');
-    window.location.reload();
+    // window.location.reload();
+    this.router.navigateByUrl('/login');
   }
 
 

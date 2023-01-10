@@ -141,7 +141,8 @@ export class ProfileComponent implements OnInit {
   logout() {
     this.cookieService.removeAll();
     localStorage.removeItem('user-data');
-    window.location.reload();
+    // window.location.reload();
+    this.router.navigateByUrl('/login');
   }
   generate(){
     return Math.floor(Math.random() * 7) + 1;
