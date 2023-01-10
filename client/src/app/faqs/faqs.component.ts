@@ -31,10 +31,10 @@ export class FaqsComponent implements OnInit {
       for (let i = 0; i < this.Queries.length; i++) {
         if (this.Queries[i].status == 2) {
 
-          this.Faqs =this.Queries[i];
+          this.Faqs.append(this.Queries[i]);
         }
-        console.log(this.Faqs)
       }
+      console.log(this.Faqs)
 
      console.log(res)
 
