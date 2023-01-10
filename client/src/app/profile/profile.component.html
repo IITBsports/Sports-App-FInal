@@ -63,13 +63,12 @@
 <div>
   <h5 style="text-align: center;margin-top:5%">My Queries</h5>
   <!-- <div *ngFor="let query of  Queries"> -->
-
   <mat-accordion style="width: 70%;" class="field">
     <mat-expansion-panel hideToggle *ngFor="let query of Queries;" style="width: 80%;margin-left:10%;">
       <!-- <div *ngIf="query.author === user.roll_number"> -->
         <mat-expansion-panel-header *ngIf="query.author === user.roll_number">
           <mat-panel-title>{{query.subject}}
-            <div *ngIf="query.status === 1">
+            <div *ngIf="query.status === 1 || query.status === 2" >
               <span class="badge rounded-pill bg-success">Success</span>
             </div>
             <div *ngIf="query.status === 0">
@@ -87,6 +86,32 @@
         <h5><b>Feedback:</b></h5>
         <p>{{query.feedback}}</p>
       <!-- </div> -->
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+<div>
+  <h5 style="text-align: center;margin-top:5%">FAQs</h5>
+  <!-- <div *ngFor="let query of  Queries"> -->
+
+  <mat-accordion style="width: 70%;" class="field">
+    <mat-expansion-panel hideToggle *ngFor="let query of Queries;" style="width: 80%;margin-left:10%;">
+      <!-- <div *ngIf="query.author === user.roll_number"> -->
+
+        <div *ngIf="query.status === 2" >
+          <mat-panel-title>{{query.subject}}
+              <span class="badge rounded-pill bg-success">Success</span>
+
+          </mat-panel-title>
+          <div style="text-align: right;">
+            <mat-panel-description style="font-weight: 900;">
+              {{query.sport}} </mat-panel-description>
+          </div>
+        <h5><b>Details:</b></h5>
+        <p>{{query.detail}}</p>
+        <h5><b>Feedback:</b></h5>
+        <p>{{query.feedback}}</p>
+      </div>
     </mat-expansion-panel>
 
   </mat-accordion>

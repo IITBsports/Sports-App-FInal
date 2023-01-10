@@ -19,7 +19,7 @@ export class EditQueryComponent implements OnInit {
   user = null;
   user_string = '';
   editQueryForm: any;
-  bool: Number[] = [1, 0];
+  bool: Number[] = [2,1,0];
   constructor( public formBuilder: FormBuilder,
     private ngZone: NgZone,
     private adminService: AdminService,

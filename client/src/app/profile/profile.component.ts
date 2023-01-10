@@ -111,6 +111,7 @@ export class ProfileComponent implements OnInit {
           console.log('failied login:', error);
         };
       }
+
     } else {
       console.log('from localstorage');
       console.log(this.user);
