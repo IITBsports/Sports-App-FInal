@@ -33,7 +33,7 @@ export class FaqsComponent implements OnInit {
 
           this.Faqs =this.Queries[i];
         }
-
+        console.log(this.Faqs)
       }
 
      console.log(res)
