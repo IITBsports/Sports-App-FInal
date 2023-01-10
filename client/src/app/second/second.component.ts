@@ -74,6 +74,12 @@ export class SecondComponent implements OnInit {
     { text: 'Table Tennis', url: 'table_tennis', cols: 2, rows: 1, color: "../../assets/sport-png/tabletennis.png",id:''},
     { text: 'Volleyball', url: 'Volleyball', cols: 2, rows: 1, color: "../../assets/sport-png/volleyball.png",id:'' },
     { text: 'Weightlifting', url: 'Weightlifting', cols: 2, rows: 1, color: "../../assets/sport-png/weightlifting.png",id:''},
+    { text: 'Ultimate', url: 'Ultimate', cols: 2, rows: 1, color: "../../assets/sport-png/ultimate.png",id:''},
+    { text: 'Dark Knight Chess Club', url: 'Dkcc', cols: 2, rows: 1, color: "../../assets/sport-png/dkcc.png",id:''},
+    { text: 'Aavhan', url: 'aavhan', cols: 2, rows: 1, color: "../../assets/sport-png/aavhan.png",id:''},
+    { text: 'Rubix Club', url: 'rubix', cols: 2, rows: 1, color: "../../assets/sport-png/rubix.png",id:''},
+    { text: 'Adventure Sports', url: 'Adventure', cols: 2, rows: 1, color: "../../assets/sport-png/adventure.png",id:''},
+    { text: 'Yoga', url: 'yoga', cols: 2, rows: 1, color: "../../assets/sport-png/yoga.png",id:''},
 
   ];
   // gc_tiles: Tile[] = [

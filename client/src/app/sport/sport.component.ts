@@ -84,8 +84,12 @@ export class SportComponent implements OnInit {
     }
     if(this.sport=="table_tennis"){
       this.trimsport = "tabletennis",
-      this.sport = "Tabel Tennis"
+      this.sport = "Table Tennis"
       this.details="Ever fancied playing in a state of the art, fully air conditioned table tennis court which you get to see in the Olympics? Look no further! We strive to portray table tennis as a sport with absolutely no prerequisites with a massive number of people picking up and excelling in this sport every year with the guidance of a dedicated coach and our team players. Headed by the Table Tennis secretary and driven by the conveners, Table Tennis Club promises fun to everyone who is a part of it. Lets take the game to a higher level."
+    }
+    if(this.sport=="aavhan"){
+      this.trimsport = "aavhan",
+      this.details="Aavhan is the annual sports festival of IIT Bombay, conceptualised first in 2017. Witnessing a footfall of 6000+, the event has seen a phenomenal rise since its inception. Home to a plethora of sports from cricket to football, and squash to water polo, several intense battles have been fought and heroes born here. A place to revel in victory and learn from failures, an event that feels home while still meaning different things to different people, Aavhan has been a symbol of hope and perseverance."
     }
     // this.sport=this.router.url.split('/')[2].toLowerCase();
     // if(this.sport=="board-games"){
