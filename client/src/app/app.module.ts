@@ -217,9 +217,9 @@ import { AdminPeopleComponent } from './admin/admin-people/admin-people.componen
       { path: 'event/:id', component: EventComponent },
       { path: 'news', component: NewsComponent },
       { path: 'news/:id2', component: NewsDetailsComponent },
-      { path: '', component: LoginComponent },
+      // { path: '', component: LoginComponent },
 
-      { path: 'home', component: HomeComponent },
+      { path: '', component: HomeComponent },
 
       { path: 'avail', component: FourthComponent },
       // { path: 'fullmenu', component: FifthComponent },
