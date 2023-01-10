@@ -1,0 +1,53 @@
+label,
+p,
+button {
+  color: white !important;
+}
+
+label,
+p,
+button {
+  color: white !important;
+}
+
+button {
+  border: solid white;
+}
+
+.form-group {
+
+  color: black;
+  align-content: center;
+  padding: 2%;
+  margin-top: 1%;
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.form-control {
+  background-color: black;
+  font-style: italic;
+  -webkit-transform: scale(1.5);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  color: whitesmoke;
+}
+
+.form-control:hover {
+  background-color: black;
+  font-style: italic;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  border-color: black;
+  border-color: blue;
+  border-style: dotted;
+  border-width: 2px;
+}
+
+.area {
+  border-radius: 20px;
+  border-color: black;
+  background-color: blue;
+}

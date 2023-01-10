@@ -1,0 +1,22 @@
+
+        <div class="container2" [routerLink]="['/news/1']" >
+            <div class="photocover">
+                <img src="{{news[0].image}}" alt="image">
+            </div> 
+            <div class="title2">{{news[0].title}}</div>
+            <div class="poster2"><mat-icon inline="true">schedule</mat-icon>{{news[0].date}}</div>
+        </div>
+        
+      <div class="container" *ngFor="let News of news | slice:1" [routerLink]="['/news',  News.id]">
+        
+        <div class="photo">
+          <img src="{{News.photo}}" alt="image">
+        </div>
+        <div class="content">
+          <div class="title">{{News.title|slice:0:40}}...</div>
+          
+          <div class="poster"> <mat-icon inline="true">Schedule</mat-icon>{{News.date}}</div>
+
+        </div>
+      </div>
+   

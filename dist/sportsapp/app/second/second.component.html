@@ -1,0 +1,169 @@
+<!-- <div class="container" dir="ltr">
+
+ <mat-card [routerLink]="['/blog',blogs._id]"
+      style="max-width: 800px;max-height:350px;border-radius: 10px; margin-top: 10%;" *ngFor="let blogs of Blogs"
+      class="event-card">
+      <mat-card-header>
+        <mat-card-title style="border-width:thick;border-color: black;">
+          <div> <img mat-card-image src="./../../assets/{{blogs.images}}">
+          </div>
+          {{blogs.blogTitle}}
+        </mat-card-title>
+
+      </mat-card-header>
+
+    </mat-card>
+
+</div> -->
+
+
+
+
+<div id='box'>  <div class="container" dir="ltr">
+  <br>
+
+  <mat-card style="max-width: 300px;border-radius: 10px; margin: 10% 5%;" [routerLink]="['/blog',events._id]" *ngFor="let events of sortByLastModifiedAsend"
+    class="event-card">
+    <mat-card-header>
+      <mat-card-title style="border-width:thick;border-color: black; margin-top:50%;">
+        <div> <img mat-card-image src="./../../assets/{{events.images}}" style="width: 25vw;max-width: 200px;">
+        </div>
+        {{events.title}}
+      </mat-card-title>
+
+      <!-- <mat-card-subtitle>{{events.date}}</mat-card-subtitle> -->
+    </mat-card-header>
+
+  </mat-card>
+    <br>
+
+</div></div>
+
+
+
+
+
+
+
+
+
+    <!-- <div style="text-align: center;">
+  <p class="section-title">Highlights</p>
+</div>
+
+<div class="container" dir="ltr">
+  <mat-card style="max-width: 400px;" *ngFor="let events of Events" class="event-card">
+    <mat-card-header>
+      <mat-card-title>
+        <div> <img mat-card-image src="./../../assets/{{events.images}}">
+        </div>
+        {{events.title}}
+      </mat-card-title>
+
+      <mat-card-subtitle>{{events.date}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{events.content}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+</div><br>
+
+
+<div style="text-align: center;">
+  <p class="section-title">Events</p>
+</div>
+-->
+
+
+
+
+
+
+ <!-- <mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let event of Events" [colspan]="4" [rowspan]="3" style="width: 50%;"
+    [routerLink]="['/event',event._id]">
+    <mat-grid-tile-header style="justify-content:center;color: azure;">
+      <h2>{{event.title}}</h2>
+    </mat-grid-tile-header>
+
+    <img src="./../../assets/{{event.images}}" style="object-fit:fill ;">
+    <mat-grid-tile-footer height="200px" style="justify-content:center;">{{event.venue}}
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>   -->
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;">
+  <p class="section-title" style="color: #51046B;font-family: avenir;font-size: xx-large;">Sports</p>
+  <mat-divider class="line1" style="margin-bottom:10%;"></mat-divider>
+</div>
+
+<mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let tile of shown_sports_tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+    style="background-color:white;" [routerLink]="['/sport', tile.url]">
+
+    <img [attr.src]="tile.color" style="object-fit:contain;">
+    <mat-grid-tile-footer style="text-align:color;">{{tile.text}}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!-- <mat-grid-list id="hidden_sports" cols="4" rowHeight="100px" [@slideInOut]="animation_state2" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let tile of hidden_sports_tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+    style="background-color:white;" [routerLink]="['/sport', tile.text]">
+    <a href="/sport/{{tile.text}}">
+      <img [attr.src]="tile.color" style="object-fit:contain; height: 90%">
+    </a>
+    <mat-grid-tile-footer>{{tile.text}}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+<div style="text-align:center; padding: 5%;">
+  <button mat-raised-button color="accent" id="toggle_button2" (click)="myfunc('toggle_button2')">Show More</button>
+</div> -->
+
+<!-- <mat-divider></mat-divider>
+<div style="text-align: center;">
+  <p class="section-title">General Championship</p>
+</div> -->
+<!-- <div class='podium'>
+  <div class='first'><img src="../../assets/gold.png" style="width: 30px;height: 30px;">
+    <p>H1</p>
+  </div>
+  <div class='first'><img src="../../assets/silver.png" style="width: 30px;height: 30px;">
+    <p>H1</p>
+  </div>
+  <div class='first'><img src="../../assets/bronze.png" style="width: 30px;height: 30px;">
+    <p>H1</p>
+  </div>
+</div> -->
+<!-- <mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let tile of gc_tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+    [style.background]="tile.color" [routerLink]="['/gc', tile.text]" style="text-align: center;">
+    <img [attr.src]="tile.color" style="width: 100px;height: 50px;">
+    <mat-grid-tile-footer>
+      <h1>{{tile.text}}</h1>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+<br>
+
+<div style="text-align: center;">
+  <mat-divider></mat-divider>
+  <p class="section-title">Inter-IIT</p>
+</div>
+<mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let tile of interiit_tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+    [style.background]="tile.color" [routerLink]="['/inter-iit', tile.text]">
+    <img [attr.src]="tile.color" style="width: 100px;height: 50px;">
+    <mat-grid-tile-footer>{{tile.text}}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list> -->

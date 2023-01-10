@@ -1,0 +1,43 @@
+.image{
+    height: 40%;
+    object-fit: contain;
+    width: 100%;
+}
+.image>img{
+    height: 100%;
+    width: 100%;
+}
+.body{
+    background-color:transparent;
+    color:white;
+    border-radius: 5px;
+    min-width: 100%;
+    min-height: 100%;
+    margin-top: 20px;
+}
+.title{
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 5px;  
+}
+.about{
+    margin-top: 5%;
+    font-size: small;
+    font-weight: lighter;
+    margin-left: 10px;
+    margin-bottom: 5%;   
+}
+.content{
+    margin-top: 10%;
+    margin-left: 5px;
+}
+
+.inline{
+    position:absolute;
+    margin-top:5px;
+    margin-left:5px;
+}
+
+.tags{
+    margin-top:20px;
+}

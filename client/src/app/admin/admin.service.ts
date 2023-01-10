@@ -8,22 +8,22 @@ import {
 import { catchError, map } from 'rxjs/operators';
 import { request } from 'http';
 import { Observable, throwError } from 'rxjs';
-import { Event } from './../../../../server/models/events.js';
-import { Blog } from './../../../../server/models/blog.js';
-import { People } from './../../../../server/models/people.js';
-import { RunningEventScore } from '../../../../server/models/RunningEventScore.js';
-import { AvsBScore } from '../../../../server/models/AvsBScore.js';
-import { CricketScore } from '../../../../server/models/CricketScore.js';
-import { Url } from '../../../../server/models/Url.js';
-import { Points } from '../../../../server/models/Points.js';
-import {banuser} from '../../../../server/models/banUser.js'
+import { Event } from './../models/events.js';
+import { Blog } from './../models/blog.js';
+import { People } from './../models/people.js';
+import { RunningEventScore } from './../models/RunningEventScore.js';
+import { AvsBScore } from './../models/AvsBScore.js';
+import { CricketScore } from './../models/CricketScore.js';
+import { Url } from './../models/Url.js';
+import { Points } from './../models/Points.js';
+import {banuser} from './../models/banUser.js'
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminService {
   // getAllEvents(){
-  //   let API_URL = `http://localhost:8080/getAllEvents`;
+  //   let API_URL = `http://10.198.49.8:8080/getAllEvents`;
   //   return this.httpClient.get<any>(API_URL).pipe(
   //     map((res: Response)=>{
   //       return res||{};
@@ -32,8 +32,8 @@ export class AdminService {
   // }
   postId;
 
-  REST_API: string = 'http://localhost:8080/api';
-  REST_API_without_api: string = 'http://localhost:8080';
+  REST_API: string = 'http://10.198.49.8:8080/api';
+  REST_API_without_api: string = 'http://10.198.49.8:8080';
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) {}

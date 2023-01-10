@@ -1,0 +1,17 @@
+<mat-tab-group mat-align-tabs="center" [backgroundColor]="'primary'" [color]="'warn'">
+  <mat-tab *ngFor="let section of sections" label={{section.label}}>
+    <div class="container" *ngFor="let blog of section.blogs" [routerLink]="['/blog', blog.id]">
+      <div class="photo">
+        <img src="{{blog.photo}}" alt="image">
+      </div>
+      <div class="content">
+
+        <div class="title">{{blog.title|slice:0:40}}...</div>
+        <div class="info">{{blog.info|slice:0:95}}...</div>
+        <div class="poster"> {{blog.poster}} on {{blog.date}}</div>
+
+      </div>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

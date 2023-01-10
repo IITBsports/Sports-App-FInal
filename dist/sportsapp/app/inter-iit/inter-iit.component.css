@@ -1,0 +1,441 @@
+.row-score {
+  float: left;
+  margin-left: 5px;
+  border-width: 10px;
+  box-shadow: violet;
+}
+
+#container {
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 0;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 16px;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: rgb(120, 120, 197);
+
+}
+
+.table {
+    width: 100%;
+  }
+
+  .mat-column-name {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: left;
+  }
+
+  .mat-column-rank1 {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-rank2 {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-rank3 {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+.side{
+    height: 20%;
+    width: 20%;
+    float: left;
+    margin-left: 3%;
+}
+.mat-card-title{
+    text-align: center;
+    margin: auto;
+}
+mat-card{
+    padding-top: 0% !important;
+    min-height: fit-content;
+}
+
+.podium{
+    position:relative;
+    left: 20%;
+    display: flex;
+    width: 55%;
+    height: 100%;
+    color: cornsilk;
+    text-align: center;
+    bottom: 20%
+}
+
+.first{
+    min-width: 33%;
+    min-height: 50px;
+    max-width: 33%;
+    max-height: 35px;
+    color:black;
+    vertical-align: bottom;
+
+}
+
+.mat-divider{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    color: white;
+    background-color: whitesmoke;
+    width: 100%;
+}
+.standingscard{
+    margin-top: 5% !important;
+}
+.team-image{
+    width: 50px;
+    height: 50px;
+}
+.left{
+    height: 100%;
+    width: 40%;
+    float: left;
+}
+.right{
+    height: 100%;
+    width: 40%;
+    float: right;
+}
+.scorescard{
+    margin-top: 10%;
+    height: max-content;
+    min-height: 100px;
+    background: #51046B;
+    border-radius: 24px;
+}
+
+h2{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+  margin-top: 5%;
+}
+
+.team_name {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  color: white;
+}
+
+.team_score {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  color: white;
+}
+
+.msg {
+  width: 100%;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+}
+
+.buttons{
+  text-align: center;
+  margin: 15px 0px;
+}
+
+table{
+    width: 50%;
+    height: fit-content;
+    padding: 0%;
+    margin: 50px auto !important;
+    border-radius: 50px;
+
+
+    -webkit-backdrop-filter: blur(45px);
+    backdrop-filter: blur(45px);
+    background-color: rgba(255, 255, 255, 0.01);
+    color: aliceblue;
+
+    background: linear-gradient(-45deg, #ee7752, #d6709a, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    /* float: left; */
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+table th{
+    font-size: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+
+table td{
+    font-size: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.sport-names{
+    text-shadow: 0px 0px 0 #ccc,
+    0.1px 0.1px 0 rgb(211, 209, 209),
+    0.2px 0.2px 0 rgb(192, 191, 191),
+    0.3px 0.3px 0 rgb(172, 171, 171),
+    0.4px 0.4px 0 rgb(174, 173, 173),
+    0.5px 0.5px 0 rgb(139, 139, 139),
+    0.6px 0.6px 0 rgb(117, 117, 117),
+    0.7px 0.7px 0 rgb(105, 105, 105),
+    0.8px 0.8px 0 rgb(85, 85, 85),
+    0.9px 0.9px 0 rgb(50, 50, 50),
+               1px 1px 0 #212121,
+               2px 6px 1px rgba(0,0,0,.5),
+               2px 3px 5px rgba(0,0,0,.6);
+    letter-spacing: 2px;
+}
+.mat-expansion-panel{margin-top: 0.5%;}
+.detailedscores{
+    min-height: 40vh;
+    min-width: 60vw;
+    margin: auto;
+    margin-top: 20%;
+}
+
+.standingstitle{
+  margin-right: auto;
+  width: 100%;
+}
+
+.mat-column-name {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: left;
+}
+
+.mat-column-rank1 {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-rank2 {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-rank3 {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.side {
+  height: 20%;
+  width: 20%;
+  float: left;
+  margin-left: 3%;
+}
+
+.mat-card-title {
+  text-align: center;
+  margin: auto;
+}
+
+mat-card {
+  padding-top: 0% !important;
+  min-height: fit-content;
+}
+
+.podium {
+  position: relative;
+  left: 20%;
+  display: flex;
+  width: 55%;
+  height: 100%;
+  color: cornsilk;
+  text-align: center;
+  bottom: 20%
+}
+
+.first {
+  min-width: 33%;
+  min-height: 50px;
+  max-width: 33%;
+  max-height: 35px;
+  color: black;
+  vertical-align: bottom;
+
+}
+
+.mat-divider {
+  margin-bottom: 5%;
+  margin-top: 5%;
+  color: white;
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+.standingscard {
+  margin-top: 5% !important;
+}
+
+.team-image {
+  width: 50px;
+  height: 50px;
+}
+
+.left {
+  height: 100%;
+  width: 40%;
+  float: left;
+}
+
+.right {
+  height: 100%;
+  width: 40%;
+  float: right;
+}
+
+.scorescard {
+  margin-top: 10%;
+  height: max-content;
+  /* min-height: 1000px; */
+  border: 5px #51046B solid;
+  /* border-image: linear-gradient(45deg, rgba(140, 15, 140, 0.812), rgb(153, 113, 210)) 2; */
+ /* background-color: rgb(235, 148, 221,0.6); */
+
+
+}
+
+table {
+  width: 50%;
+  height: fit-content;
+  padding: 0%;
+  margin: 0;
+  /* float: left; */
+}
+
+.mat-expansion-panel {
+  margin-top: 0.5%;
+}
+
+.detailedscores {
+  min-height: 40vh;
+  min-width: 60vw;
+  margin: auto;
+  margin-top: 20%;
+}
+
+.standingstitle {
+  margin-right: auto;
+}
+
+.scoreboard{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+
+}
+
+.scoreboard_name,
+.scoreboard_pname,
+.scoreboard_score{
+  padding: 10px;
+  text-align: center;
+
+}
+.scoreboard_name{
+  font-weight: bold;
+  border-bottom: 1px solid rgb(235, 110, 110);
+  color: rgb(193, 27, 235);
+  font-size: medium;
+
+}
+.scoreboard_pname{
+  font-weight: bold;
+  border-top: 1px solid rgb(235, 110, 110);
+  color: rgb(193, 27, 235);
+  font-size: medium;
+
+}
+
+.scoreboard_score {
+  /* border-image: linear-gradient(45deg, rgb(246, 95, 246), orange) 2; */
+  position: relative;
+  padding: 15px 20px;
+  font-size: large;
+  font-family: 'Press Start 2P', cursive;
+  background-color:rgb(255, 213, 145);
+  margin: 10px;
+  border-radius: 16px;
+  color: red;
+
+  /* box-shadow: 0 3px 9px black, inset 0 0 9px rgb(219, 32, 32); */
+  box-shadow: 10px 10px lightblue;
+  box-shadow: 5px 5px 8px rgb(0, 0, 0), 10px 10px 8px rgb(247, 255, 138);
+}
+
+.scoreboard_score::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  border: 5px solid transparent;
+  /* background: linear-gradient(45deg,purple,orange) border-box; */
+  /* background: linear-gradient(45deg, rgb(246, 95, 246), orange) border-box; */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.scoreboard01{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin: 10px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* border: 2px solid; */
+  /* border-image: linear-gradient(45deg, rgb(246, 95, 246), orange) 2; */
+  /* box-shadow: 5px 5px 8px rgb(0, 0, 0), 10px 10px 8px rgb(247, 255, 138); */
+}
+.team_name,.team_score{
+  /* margin: 5px; */
+  font-size: medium;
+  font-weight: 500;
+}
+
+.isvg{
+  margin:15px;
+  width: 24px;
+height: 24px;
+}
+
+.mat-tab-header{
+  visibility: hidden !important;
+}

@@ -1,0 +1,1 @@
+!function(){var a=localStorage["dark-mode"],r=!1;if(a)try{r=JSON.parse(a).darkMode}catch(e){return console.warn("Error initializing angular-dark-mode"),void console.warn(e)}else r=window.matchMedia("(prefers-color-scheme: dark)").matches;document.body.classList.add("dark-mode-preloading",r?"dark-mode":"light-mode")}();

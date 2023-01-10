@@ -1,0 +1,149 @@
+<!-- <div class="heading display-4 mt-5 mb-1">{{sport}}</div> -->
+<mat-menu
+  #menu="matMenu"
+  style="background-color: rgb(43, 35, 56); border-top: purple"
+>
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      sports
+    </mat-icon><a class="nav-link" routerLink="detail" routerLinkActive="active-link"
+      style="margin-left: 13px;color: rgb(220, 125, 198);">{{sport}}</a><br>
+  </button>
+  <button mat-menu-item style="background:rgb(255,255,255); color: white;border-radius: 1px;">
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      events
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="../events"
+      routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >Events</a
+    ><br />
+  </button>
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      book
+    </mat-icon><a class="nav-link" routerLink="rules" routerLinkActive="active-link"
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="rules"
+      routerLinkActive="sport/athletics/rules"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >Rules</a
+    ><br />
+  </button>
+
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(228,125,198); position: absolute; top: 10px;">
+      people
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="../people"
+      routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >People</a
+    ><br />
+  </button>
+
+  <button
+    mat-menu-item
+    style="background: rgb(255, 255, 255); color: white; border-radius: 1px"
+  >
+    <!-- <mat-icon aria-hidden="true" aria-label="Example home icon"
+      style="color: rgb(220, 125, 198); position: absolute; top: 10px">
+      timer_10
+    </mat-icon> -->
+    <a
+      class="nav-link"
+      routerLink="../matches"
+      routerLinkActive="active-link"
+      style="margin-left: 13px; color: rgb(220, 125, 198)"
+      >Matches</a
+    ><br />
+  </button>
+</mat-menu>
+<div class="sport-name-div" style="margin-top: 10%">
+  <img src="{{ image }}" style="float: left; margin-top: -10%" />
+  <div class="heading" style="float: inline-end">
+    {{ sport | uppercase }}
+  </div>
+</div>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" id="menu-icon">
+  <mat-icon style="font-size: 52px">more_vert</mat-icon>
+</button>
+
+<mat-card
+  class="mat-drawer-container container"
+  style="background: transparent; box-shadow: none"
+>
+  <div>
+    <ul class="customIndent">
+      <li>
+        <b>General Rules:</b>
+        <ul class="customIndent">
+          <li>
+            Don’t enter in the long jump pit without permission from Athletics
+            Secretary
+          </li>
+          <li>
+            High jump and pole vault Mat should be used with prior permission
+            from Athletics Secretary
+          </li>
+          <li>
+            Leave starting 6 lanes of tracks for Inter-IIT practice session from
+            7 p.m to 8:30 p.m
+          </li>
+          <li>
+            Vacate discuss throw,javelin throw and shot put throw area during
+            practice time as it may lead to injuries
+          </li>
+          <li>Don’t bring animals in the Gymkhana ground</li>
+        </ul>
+      </li>
+      <li>
+        <b>Issue of Equipment:</b>
+        <ul class="customIndent">
+          <li>
+            All the Athletics equipments can be issued from SAC storeroom
+            against valid ID card
+          </li>
+          <li>
+            Issued equipments should be used properly and returned after use
+            without any physical damage
+          </li>
+        </ul>
+      </li>
+      <li>
+        <b>Rules regarding fine:</b>
+        <ul class="customIndent">
+          <li>
+            Fine will be imposed on entering long jump pit without permission
+          </li>
+          <li>Parents of kids playing on mats will be charged ₹ 500</li>
+          <li>
+            Any damage to the issued equipment will incur a fine of thrice the
+            value of the product
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+</mat-card>

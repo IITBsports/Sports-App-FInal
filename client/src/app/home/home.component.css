@@ -65,7 +65,7 @@ table tr th:nth-child(5){
     max-height: 40000px;
     background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     display: table-cell;
-    background: #51046B;
+    background: transparent;
   
   }
   

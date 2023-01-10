@@ -1,0 +1,218 @@
+<mat-tab-group #tabGroup mat-align-tabs="center" [backgroundColor]="'accent'" [color]="'accent'">
+  <mat-tab label="Blogs" id='blogs'>
+    <ng-template matTabContent>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="Roll of Honor" id='honor'>
+    <ng-template matTabContent>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="Council" id='council'>
+    <ng-template matTabContent>
+      <mat-card style="background-color: silver;margin-top:2px ;" class="main">
+        <div class="dpdiv">
+          <figure><img src="../assets/parul.jpeg" class="div"></figure>
+        </div>
+        <mat-card-title class="name">Parul Agarwal</mat-card-title>
+        <mat-card-subtitle class="post">Institute Girls Nominee </mat-card-subtitle>
+        <div style="border-radius: 100px;width:50%;margin-left: 25%;">
+          <mat-card-content class="contentno" [cdkCopyToClipboard]="parulno">9509240643
+          </mat-card-content>
+        </div>
+        <div style="border-radius: 100px;width:60%;margin-left: 20%;">
+          <mat-card-content class="content" [cdkCopyToClipboard]="parulid">parul291299@gmail.com
+          </mat-card-content>
+        </div>
+      </mat-card>
+      <mat-card style="background-color: silver;margin-top: 5px;" class="main">
+        <div class="dpdiv">
+          <figure><img src="../assets/nitya.jpeg" class="div"></figure>
+        </div>
+        <mat-card-title class="name">Nitya Garg</mat-card-title>
+        <mat-card-subtitle class="post">Institute PG Girls Nominee</mat-card-subtitle>
+        <div style="border-radius: 100px;width:50%;margin-left: 25%;">
+          <mat-card-content class="contentno" [cdkCopyToClipboard]="nityano">9882155133
+          </mat-card-content>
+        </div>
+        <div style="border-radius: 100px;width:50%;margin-left: 25%;">
+          <mat-card-content class="content" [cdkCopyToClipboard]="nityaid">nitya.garg@sjmsom.in
+          </mat-card-content>
+        </div>
+      </mat-card>
+      <div style="margin-top: 5px;padding:5px ;padding-top: 20px;">
+        <h1 style="text-align: center;color: rgb(211, 155, 155);font-family:cursive;font-size: xx-large;">Secretaries
+        </h1>
+      </div>
+      <mat-card style="background-color: silver;" class="main">
+        <div class="dpdiv">
+          <figure><img src="../assets/diksha.jpeg" class="div"></figure>
+        </div>
+        <mat-card-title class="name">Diksha Chanda</mat-card-title>
+        <mat-card-subtitle class="post">Indian Games</mat-card-subtitle>
+
+        <div style="border-radius: 100px;width:50%;margin-left: 25%;">
+          <mat-card-content class="contentno" [cdkCopyToClipboard]="dikshano">9328493602
+          </mat-card-content>
+        </div>
+        <div style="border-radius: 100px;width:80%;margin-left: 10%;">
+          <mat-card-content class="content" [cdkCopyToClipboard]="dikshaid">diks.chandna@gmail.com
+          </mat-card-content>
+        </div>
+
+      </mat-card>
+      <mat-card style="background-color: silver" class="main">
+        <div class="dpdiv">
+          <figure><img src="../assets/manisha.jpeg" class="div"></figure>
+        </div>
+        <mat-card-title class="name">Manisha Kopuri</mat-card-title>
+        <mat-card-subtitle class="post">Atheletics</mat-card-subtitle>
+
+        <div style="border-radius: 100px;width:50%;margin-left: 25%;">
+          <mat-card-content class="contentno" [cdkCopyToClipboard]="manishano">8500487326
+          </mat-card-content>
+        </div>
+        <div style="border-radius: 100px;width:80%;margin-left: 10%;">
+          <mat-card-content class="content" [cdkCopyToClipboard]="manishaid">manishakopuri27@gmail.com
+          </mat-card-content>
+        </div>
+
+      </mat-card>
+      <mat-card style="background-color: silver" class="main">
+        <div class="dpdiv">
+          <figure><img src="../assets/ananya.jpeg" class="div"></figure>
+        </div>
+        <mat-card-title class="name">Ananya Shankar Singh</mat-card-title>
+
+        <mat-card-content class="content">mailanananyashankar@gmail.com</mat-card-content>
+        <div style="border-radius: 100px;width:50%;margin-left: 25%;">
+          <mat-card-content class="contentno" [cdkCopyToClipboard]="ananyano">887947867
+          </mat-card-content>
+        </div>
+        <div style="border-radius: 100px;width:80%;margin-left: 10%;">
+          <mat-card-content class="content" [cdkCopyToClipboard]="ananyaid">mailanananyashankar@gmail.com
+          </mat-card-content>
+        </div>
+
+      </mat-card>
+      <mat-card style="background-color: silver" class="main">
+        <div class="dpdiv">
+          <figure><img src="../assets/bhargavi.jpeg" class="div"></figure>
+        </div>
+        <mat-card-title class="name">Bhargavi Taralekar</mat-card-title>
+        <mat-card-subtitle class="post">Badminton</mat-card-subtitle>
+
+        <div style="border-radius: 100px;width:50%;margin-left: 25%;">
+          <mat-card-content class="contentno" [cdkCopyToClipboard]="bhargavino">9594908108 </mat-card-content>
+        </div>
+        <div style="border-radius: 100px;width:80%;margin-left: 10%;">
+          <mat-card-content class="content" [cdkCopyToClipboard]="bhargaviid">bhargavi.taralekar2606@gmail.com
+          </mat-card-content>
+        </div>
+
+      </mat-card>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="Contact Us" id='contacts'>
+    <ng-template matTabContent>
+
+      <br>
+      <form>
+
+        <mat-accordion class="example-headers-align" style="background-color: gray;">
+          <mat-expansion-panel style="margin-left: auto; margin-right: auto;" [expanded]="step === 0"
+            (opened)="setStep(0)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Personal data
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-radio-group [formControl]="modeFormControl">
+              <mat-radio-button value="Anonymous" name="Anonymous" (click)="hide()">Anonymous</mat-radio-button><br>
+              <mat-radio-button value="Non-Anonymous" (click)="show()">Non-Anonymous</mat-radio-button>
+            </mat-radio-group>
+            <div *ngIf="!isAnon">
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input required matInput [formControl]="nameFormControl">
+                <mat-error *ngIf="nameFormControl.hasError('minlength')">
+                  Name must be at least 3 characters long.
+                </mat-error>
+                <mat-error *ngIf="nameFormControl.hasError('required')">
+                  Name is required
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Roll Number</mat-label>
+                <input matInput required [formControl]="rollNoFormControl">
+                <mat-error *ngIf="rollNoFormControl.hasError('required')">
+                  Roll Number is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <mat-action-row>
+              <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel style="margin-left: auto; margin-right: auto;" [expanded]="step === 1"
+            (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Category
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-form-field>
+              <mat-label>Type</mat-label>
+              <select matNativeControl required [formControl]="typeFormControl">
+                <option value="maintenance">Maintenance</option>
+                <option value="harrasment">Harrasment</option>
+                <option value="enquiry">Enquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </mat-form-field>
+
+            <mat-action-row>
+              <button mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel style="margin-left: auto; margin-right: auto;" [expanded]="step === 2"
+            (opened)="setStep(2)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Details
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-form-field>
+              <!--<mat-label>Description</mat-label>-->
+              <textarea matInput placeholder="Description" rows="5" cols="30" [formControl]="detailsFormControl"
+                required></textarea>
+              <mat-error *ngIf="detailsFormControl.hasError('required')">
+                Description is required
+              </mat-error>
+              <!-- <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly> -->
+            </mat-form-field>
+            <!-- <mat-datepicker #picker></mat-datepicker> -->
+
+            <mat-action-row>
+              <button mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button mat-button color="primary" (click)="onSubmit()">Submit</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </form>
+      <br>
+
+      
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

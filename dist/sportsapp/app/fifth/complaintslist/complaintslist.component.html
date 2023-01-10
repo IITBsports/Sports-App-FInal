@@ -1,0 +1,91 @@
+<mat-accordion style="width: 100%;">
+  <mat-expansion-panel hideToggle
+    style="width: 80%;margin-left: 10%;background-color: rgb(116, 121, 187);color: white;">
+    <mat-expansion-panel-header>
+      <mat-panel-title style="color: white;">Complaint Subject
+      </mat-panel-title>
+      <div style="text-align: right;">
+        <mat-panel-description style="font-weight: 900;color: white;">
+          Sport </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-accordion style="width: 100%;" class="field">
+  <!-- <mat-expansion-panel hideToggle *ngFor="let book of Books; let i = index" style="width: 60%;margin-left: 20%;"> -->
+  <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Subject [1]
+      </mat-panel-title>
+      <div style="text-align: right;">
+        <mat-panel-description style="font-weight: 900;">
+          Chess </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+    <p>This is random description. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis distinctio
+      esse alias quo temporibus hic reiciendis illum ipsam quisquam obcaecati, aut eaque labore voluptas!</p>
+    <!-- <button mat-raised-button class="btn btn-sm btn-primary"
+            style="background-color: rgb(99, 105, 185);color:white">Edit</button> -->
+    <button mat-mini-fab style="background-color: rgb(99, 105, 185);color:white;">
+      <mat-icon>add</mat-icon>
+    </button>
+    <!-- <button mat-raised-button class="btn btn-sm btn-danger" 
+            style="background-color: rgb(99, 105, 185);color:white; margin-left: 10px;">Delete</button> -->
+    <button mat-mini-fab color="primary" style="background-color: rgb(99, 105, 185);color:white; margin-left: 10px;"
+      aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Subject [2]
+      </mat-panel-title>
+      <div style="text-align: right;">
+        <mat-panel-description style="font-weight: 900;">
+          Badminton </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+    <p>This is random description. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus quas
+      laudantium labore vitae quaerat quae aspernatur, nesciunt temporibus autem explicabo dignissimos illum eaque
+      facilis.</p>
+    <!-- <button mat-raised-button class="btn btn-sm btn-primary"
+            style="background-color: rgb(99, 105, 185);color:white">Edit</button> -->
+    <button mat-mini-fab style="background-color: rgb(99, 105, 185);color:white;">
+      <mat-icon>add</mat-icon>
+    </button>
+    <!-- <button mat-raised-button class="btn btn-sm btn-danger" 
+            style="background-color: rgb(99, 105, 185);color:white; margin-left: 10px;">Delete</button> -->
+    <button mat-mini-fab color="primary" style="background-color: rgb(99, 105, 185);color:white; margin-left: 10px;"
+      aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle style="width: 80%;margin-left: 10%;">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Subject [3]
+      </mat-panel-title>
+      <div style="text-align: right;">
+        <mat-panel-description style="font-weight: 900;">
+          Cricket </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+    <p>This is random description. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus quas
+      laudantium labore vitae quaerat quae aspernatur, nesciunt temporibus autem explicabo dignissimos illum
+      eaque facilis.</p>
+    <!-- <button mat-raised-button class="btn btn-sm btn-primary"
+            style="background-color: rgb(99, 105, 185);color:white">Edit</button> -->
+    <button mat-mini-fab style="background-color: rgb(99, 105, 185);color:white;">
+      <mat-icon>add</mat-icon>
+    </button>
+    <!-- <button mat-raised-button class="btn btn-sm btn-danger" 
+            style="background-color: rgb(99, 105, 185);color:white; margin-left: 10px;">Delete</button> -->
+    <button mat-mini-fab color="primary" style="background-color: rgb(99, 105, 185);color:white; margin-left: 10px;"
+      aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-expansion-panel>
+  <button mat-raised-button class="btn btn-sm btn-primary"
+    style="background-color: rgb(99, 105, 185);color:white;margin-left: 10%; margin-top: 10px;text-align:center;"
+    routerLinkActive="active" routerLink="../add-complaint">Add Complaints</button>
+</mat-accordion>

@@ -17,7 +17,7 @@ import {QueryData} from './models/Query.js'
 export class RefreshPageService {
   postId;
   constructor(private httpClient: HttpClient, private http: HttpClient) {}
-  REST_API: string = 'http://localhost:8080';
+  REST_API: string = 'http://10.198.49.8:8080';
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   getuserdata() {
     let API_URL = this.REST_API + '/api/getuserdata';

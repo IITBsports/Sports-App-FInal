@@ -1,0 +1,99 @@
+.frame{
+    min-height: 45vh;
+}
+
+mat-grid-tile{
+    border-radius: 5%;
+    border: 10%;
+}
+mat-grid-tile  img{
+  height: 100%;
+  width: 100%
+}
+
+  .container {
+    display: flex;
+    overflow: auto;
+    flex: none;
+    width: 90%;
+    height: fit-content;
+    flex-flow: row nowrap;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+  }
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container > mat-card {
+    text-align: center;
+    scroll-snap-align: center;
+    flex: none;
+    font-size: 400%;
+    width: 80%;
+    height: 100%;
+    margin-right: 10%;
+    scroll-snap-stop: always;
+
+  }
+  .container > div:nth-child(even) {
+    background-color: #87EA87;
+  }
+  
+  .container > div:nth-child(odd) {
+    background-color: #87CCEA;
+  }
+
+
+
+.section-title{
+    font-size: larger;
+    color: azure;
+    margin-top: 5%;
+}
+.mat-divider {
+    border-top-color: grey;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+  }
+#hidden_sports{
+    margin-top: 5%;
+    pointer-events: none;
+}
+#shown_sports{
+    margin-bottom: 0%;
+}
+mat-grid-list{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
+mat-card-title{
+  font-size: medium;
+}
+mat-card > img{
+  width: 50%;
+  height: 50%;
+}
+mat-grid-tile-footer{
+  font-size: xx-small;
+  max-height: 20px;
+  text-align: center;
+}
+.podium{
+  display: flex;
+  margin: auto;
+  width: fit-content;
+  color: white;
+
+}
+.first{
+  margin: 10px;
+
+}
+.podium p{
+  text-align: center;
+  margin-top: 5px;
+}
