@@ -58,6 +58,21 @@ if(this.sport=="lawn_tennis"){
 if(this.sport=="table_tennis"){
   this.details="Ever fancied playing in a state of the art, fully air conditioned table tennis court which you get to see in the Olympics? Look no further! We strive to portray table tennis as a sport with absolutely no prerequisites with a massive number of people picking up and excelling in this sport every year with the guidance of a dedicated coach and our team players. Headed by the Table Tennis secretary and driven by the conveners, Table Tennis Club promises fun to everyone who is a part of it. Lets take the game to a higher level."
 }
+if(this.sport=="aavhan"){
+  this.details="Aavhan is the annual sports festival of IIT Bombay, conceptualised first in 2017. Witnessing a footfall of 6000+, the event has seen a phenomenal rise since its inception. Home to a plethora of sports from cricket to football, and squash to water polo, several intense battles have been fought and heroes born here. A place to revel in victory and learn from failures, an event that feels home while still meaning different things to different people, Aavhan has been a symbol of hope and perseverance."
+}
+if(this.sport=="rubix"){
+  this.details="Initiated by IIT Bombay Sports in 2011, this club intends to provide an opportunity for all cubing enthusiasts of IIT Bombay to learn more about cubing. In 2012, we broke the WORLD RECORD (now former) of Most Number of people solving the cube simultaneously, where 937 people solved the cubes in less than 30 mins! To encourage cubing in the institute, we conduct various workshops, where we teach the beginners and advanced methods to solve the Rubik’s cube. Workshops are usually followed by an Institute level speed solving competition."
+}
+if(this.sport=="dkcc"){
+  this.details="The Dark Knight, Chess club of IIT Bombay was established in 2013 and has been active in the institute ever since. We have organised several tournaments in various formats and coaching sessions for both advanced and beginners in the campus."
+}
+if(this.sport=="adventure"){
+  this.details="Freedom, the Wall is a world-class climbing facility setup by IIT Bombay in collaboration with The Girivihar Club. Established on the 7th of May 2019, it has supported many climbing enthusiasts explore the sport ever since. The club aims towards popularizing the sport and promoting the true spirit of it, among all."
+}
+if(this.sport=="yoga"){
+  this.details="Yogastha (meaning \"established in yoga\") is Wellness Club as an institute body under students' Gymkhana at IIT Bombay. Since its' inception on 1st International Day of Yoga (21st June 2015), the club is working towards a stress-free, peaceful campus community covering all wellness aspects as physical, emotional, spiritual, intellectual, etc. Since then the club is actively conducting weekly sessions and other events."
+}
 // else{this.router.navigate(['/explore']);}
 
   }
