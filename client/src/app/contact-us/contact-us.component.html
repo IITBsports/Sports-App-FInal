@@ -2,14 +2,14 @@
   style="border: 5px solid;
 border-image: linear-gradient(45deg, rgb(246, 95, 246), orange) 2; margin: 10px; background-color: rgb(235, 148, 221,0.6);">
 
-  <mat-card style="background-image: linear-gradient(#e66465, #9198e5); margin-top:10px ;" class="main">
+  <mat-card style="background-image: linear-gradient(#e66465, #9198e5); margin-top:10px ;" class="main" *ngIf="card.position=='Cabinet'">
     <h5
       style="text-align: center;color:rgb(64, 16, 72); margin-top: 2%; border-radius: 20%; font-size: x-large; font-weight: bold;">
       {{card.position}}
     </h5>
     <mat-card-subtitle class="post"> </mat-card-subtitle>
     <div class="dpdiv">
-      <figure><img src="{{card.image}}" class="div"></figure>
+      <figure><img src="../../assets/people/{{card.image}}" class="div"></figure>
     </div>
     <mat-card-title class="name" style="color: rgb(89, 17, 94);"> {{card.name}} </mat-card-title>
     <!-- <div style="border-radius: 100px;width:50%;margin-left: 25%; margin: auto;">
@@ -40,18 +40,18 @@ border-image: linear-gradient(45deg, rgb(246, 95, 246), orange) 2; margin: 10px;
   <h1 style="text-align: center;color: rgb(211, 155, 155);font-family:cursive;font-size: xx-large;">Secretaries
   </h1>
 </div>
-<div *ngFor="let card of Secretaries"
+<div *ngFor="let card of Contacts"
   style="border: 5px solid;
 border-image: linear-gradient(45deg, rgb(246, 95, 246), orange) 2; margin: 10px; background-color: rgb(235, 148, 221,0.6);">
 
-<mat-card style="background-image: linear-gradient(#e66465, #9198e5); margin-top:10px ;" class="main">
+<mat-card style="background-image: linear-gradient(#e66465, #9198e5); margin-top:10px ;" class="main" *ngIf="card.position=='Secretaries'">
   <h5
     style="text-align: center;color:rgb(64, 16, 72); margin-top: 2%; border-radius: 20%; font-size: x-large; font-weight: bold;">
     {{card.position}}
   </h5>
   <mat-card-subtitle class="post"> </mat-card-subtitle>
   <div class="dpdiv">
-    <figure><img src="{{card.image}}" class="div"></figure>
+    <figure><img src="../../assets/people/{{card.image}}" class="div"></figure>
   </div>
   <mat-card-title class="name" style="color: rgb(89, 17, 94);"> {{card.name}} </mat-card-title>
   <!-- <div style="border-radius: 100px;width:50%;margin-left: 25%; margin: auto;">
@@ -82,18 +82,18 @@ border-image: linear-gradient(45deg, rgb(246, 95, 246), orange) 2; margin: 10px;
   <h1 style="text-align: center;color: rgb(211, 155, 155);font-family:cursive;font-size: xx-large;">Heads
   </h1>
 </div>
-<div *ngFor="let card of Heads"
+<div *ngFor="let card of Contacts"
   style="border: 5px solid;
 border-image: linear-gradient(45deg, rgb(246, 95, 246), orange) 2; margin: 10px; background-color: rgb(235, 148, 221,0.6);">
 
-<mat-card style="background-image: linear-gradient(#e66465, #9198e5); margin-top:10px ;" class="main">
+<mat-card style="background-image: linear-gradient(#e66465, #9198e5); margin-top:10px ;" class="main" *ngIf="card.position=='Heads'">
   <h5
     style="text-align: center;color:rgb(64, 16, 72); margin-top: 2%; border-radius: 20%; font-size: x-large; font-weight: bold;">
     {{card.position}}
   </h5>
   <mat-card-subtitle class="post"> </mat-card-subtitle>
   <div class="dpdiv">
-    <figure><img src="{{card.image}}" class="div"></figure>
+    <figure><img src="../../assets/people/{{card.image}}" class="div"></figure>
   </div>
   <mat-card-title class="name" style="color: rgb(89, 17, 94);"> {{card.name}} </mat-card-title>
   <!-- <div style="border-radius: 100px;width:50%;margin-left: 25%; margin: auto;">
