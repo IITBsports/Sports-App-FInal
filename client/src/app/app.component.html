@@ -14,7 +14,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container fxFlexFill
-    style="height: 80vh;width:100%;  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);">
+    class = "footer-tab">
     <mat-sidenav #sidenav>
       <mat-nav-list>
         <!-- <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a> -->
@@ -100,7 +100,7 @@
   </div>
 
   <footer>
-    <nav mat-tab-nav-bar style=" width: 100%; height: 90%; margin-top: 15%;">
+    <nav mat-tab-nav-bar style=" width: 100%; height: 100%; margin-top: 5%;">
       <a mat-tab-link (click)="activeLink = 'AB'" routerLink="explore" [active]="activeLink == 'AB'"><img
           src="../assets/explore.png" alt="image"></a>
       <a mat-tab-link (click)="activeLink = 'CD'" routerLink="/" [active]="activeLink == 'CD'"
