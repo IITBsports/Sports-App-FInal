@@ -54,7 +54,7 @@ export class AppComponent implements OnInit{
   logout(){
     this.cookieService.removeAll();
     localStorage.removeItem('user-data');
-    // window.location.reload();
+    window.location.reload();
     this.router.navigateByUrl('/login');
   }
 

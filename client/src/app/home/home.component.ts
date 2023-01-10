@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RefreshPageService } from '../refresh-page.service';
 
 import Swiper from 'swiper'
+import { CookieService } from 'ngx-cookie';
 export interface Tile {
   color: string;
   cols: number;
@@ -19,6 +20,8 @@ export interface Tile {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  user = null;
+  user_string = '';
 Events:any;
 Points:any;
 Blogs:any;
@@ -60,13 +63,42 @@ httpOptions
   ];
   constructor( private route: ActivatedRoute,
     private http: HttpClient,
-    private router: Router,@Inject(DOCUMENT) private document: Document,private refreshPageService: RefreshPageService, private Activatedroute: ActivatedRoute) {
+    private router: Router,@Inject(DOCUMENT) private document: Document,private refreshPageService: RefreshPageService, private Activatedroute: ActivatedRoute, private cookieService: CookieService,) {
 
 
     this.httpOptions = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'Host': 'gymkhana.iitb.ac.in', 'Authorization' : 'Basic eyI1ejhva2M4U2tJZEdiRkRwNmRlaFlPMEtaZFVMT3BYeElQbGw1RGpHIjoidzJNZmlOVThma3JmYTZNcFV1UVJWVUhBa25qUDFWM2tqc2RUd2JMUEhGbEY5VkNFOTdQVkpSYThxeEdKY3hkU2hRSU4xR01kbGRvN0lCUjl3ZnRmQUU0Z3BSVkhHNzF1bjFpVHV6Z2w3RjE4blBUMUd3UVNPdEtrYjR0RWF1czEifQ=='});
   }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user-data'));
+    this.user_string = localStorage.getItem('user-data');
+    if (!this.user) {
+      let sessionID = this.cookieService
+        .get('mysesCookie')
+        .split(':')[1]
+        .split('.')[0];
+      //console.log(sessionID);
+      if (sessionID != undefined) {
+        this.user = this.refreshPageService
+          .getUserData(sessionID)
+          .subscribe((data) => {
+            this.user = data;
+            this.user_string = JSON.stringify(this.user);
+            console.log(this.user);
+            if (data != undefined && data != null)
+              localStorage.setItem('user-data', JSON.stringify(this.user));
+            Response.redirect('https://10.198.49.8/sportsapp');
+          });
+        (error) => {
+          console.log('failied login:', error);
+        };
+      }
+
+    } else {
+      console.log('from localstorage');
+      console.log(this.user);
+    }
+
     this.refreshPageService.getAllEvents().subscribe(res => {
       this.Events =res;
        for(let i=0;i<this.Events.length;i++){
@@ -92,7 +124,7 @@ httpOptions
       //  }
 
     });
-  
+
     var swiper = new Swiper('.swiper-container', {
       slidesPerView: 1.5,
       initialSlide: 5,
@@ -106,7 +138,7 @@ httpOptions
     console.log("Maa")
     console.log(this.Events)
 
-    
+
   }
 
 
